@@ -1,0 +1,19 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "ignoreValues": [
+          "box",
+          "vertical",
+          "display",
+          "box-orient"
+        ]
+      }
+    ],
+    "no-descending-specificity": null,
+    "selector-pseudo-class-no-unknown": null,
+    "max-line-length": null
+  }
+}

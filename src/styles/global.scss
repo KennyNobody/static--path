@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+
+  overflow-x: hidden;
+}
+
+.main {
+  flex-grow: 1;
+  overflow-x: hidden;
+}
