@@ -1,0 +1,16 @@
+.title {
+	&--regular {
+		font-size: r(80);
+		font-weight: 700;
+		line-height: 1.45;
+		color: var(--color-accent-dark)
+	}
+
+	&--large {
+
+	}
+
+	&.uppercase {
+		text-transform: uppercase;
+	}
+}

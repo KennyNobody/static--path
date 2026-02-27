@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body class="body">
     <%= htmlWebpackPlugin.options.widgets.header %>
     <div class="main">
-        <svg class="icon">
-            <use href="assets/sprite.svg#icon-ball"></use>
-        </svg>
-        <img class="image" src="./assets/images/404.webp" alt="">
+        <%= htmlWebpackPlugin.options.widgets.intro %>
+        <%= htmlWebpackPlugin.options.widgets.about %>
+        <%= htmlWebpackPlugin.options.widgets.map %>
+        <%= htmlWebpackPlugin.options.widgets.sliderAbout %>
+        <%= htmlWebpackPlugin.options.widgets.filter %>
+        <%= htmlWebpackPlugin.options.widgets.sliderPathes %>
+        <%= htmlWebpackPlugin.options.widgets.news %>
+        <%= htmlWebpackPlugin.options.widgets.partners %>
+        <%= htmlWebpackPlugin.options.widgets.more %>
+        <%= htmlWebpackPlugin.options.widgets.eco %>
     </div>
     <%= htmlWebpackPlugin.options.widgets.footer %>
 </body>

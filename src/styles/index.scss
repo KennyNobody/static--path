@@ -1,11 +1,13 @@
+@import "./mixins";
+@import "./vars/global";
+@import "./vars/sizes";
+@import "./vars/colors";
 @import "./fonts";
-@import "./shared";
-@import "./widgets";
-@import "./pages";
 @import "./global";
+@import "./shared";
 
 .icon {
-    width: 20px;
-    height: 20px;
+    width: r(20);
+    height: r(20);
     display: block;
 }
