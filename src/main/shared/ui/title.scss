@@ -3,7 +3,7 @@
 		font-size: r(80);
 		font-weight: 700;
 		line-height: 1.45;
-		color: var(--color-accent-dark)
+		color: var(--color-accent-dark);
 	}
 
 	&--large {
@@ -12,5 +12,14 @@
 
 	&.uppercase {
 		text-transform: uppercase;
+	}
+}
+
+@media (max-width: 1299px) {
+	.title {
+		&--regular {
+			font-size: r(40);
+			line-height: 1.15;
+		}
 	}
 }

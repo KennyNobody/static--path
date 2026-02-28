@@ -1,0 +1,21 @@
+.editor {
+	& > * {
+		margin-bottom: 1em;
+	}
+
+	& :last-child {
+		margin-bottom: 0;
+	}
+
+	&--regular {
+		font-size: r(20);
+	}
+}
+
+@media (max-width: 1299px) {
+	.editor {
+		&--regular {
+			font-size: r(15);
+		}
+	}
+}

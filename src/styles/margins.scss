@@ -1,0 +1,17 @@
+.mb {
+	&-70 {
+		margin-bottom: r(70);
+	}
+
+	&-180 {
+		margin-bottom: r(180);
+	}
+}
+
+@media (max-width: 1299px) {
+	.mbm {
+		&-50 {
+			margin-bottom: r(50);
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.button {
+	height: r(48);
+	font-weight: 500;
+	font-size: r(18);
+	padding: r(13) r(50);
+	border-radius: r(16);
+
+	&--fill {
+
+	}
+
+	&--full {
+		width: 100%;
+	}
+
+	&--accent {
+		background-color: var(--color-accent-light);
+	}
+}

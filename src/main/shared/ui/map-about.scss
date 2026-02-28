@@ -1,0 +1,35 @@
+.map-about {
+	display: flex;
+	//min-height: 100vh;
+	text-align: center;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	padding: r(120) 0 r(210);
+
+	&__map {
+		display: block;
+		max-width: 100%;
+		margin-top: r(100);
+	}
+
+	&__content {
+		margin-top: r(80);
+		max-width: r(870);
+		color: var(--color-dark);
+	}
+}
+
+@media (max-width: 1299px) {
+	.map-about {
+		padding: r(80) 0 r(80);
+
+		&__map {
+			margin-top: r(68);
+		}
+
+		&__content {
+			margin-top: r(56);
+		}
+	}
+}

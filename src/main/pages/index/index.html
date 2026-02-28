@@ -7,16 +7,41 @@
 <body class="body">
     <%= htmlWebpackPlugin.options.widgets.header %>
     <div class="main">
-        <%= htmlWebpackPlugin.options.widgets.intro %>
-        <%= htmlWebpackPlugin.options.widgets.about %>
-        <%= htmlWebpackPlugin.options.widgets.map %>
-        <%= htmlWebpackPlugin.options.widgets.sliderAbout %>
-        <%= htmlWebpackPlugin.options.widgets.filter %>
-        <%= htmlWebpackPlugin.options.widgets.sliderPathes %>
-        <%= htmlWebpackPlugin.options.widgets.news %>
-        <%= htmlWebpackPlugin.options.widgets.partners %>
-        <%= htmlWebpackPlugin.options.widgets.more %>
-        <%= htmlWebpackPlugin.options.widgets.eco %>
+        <div class="main__section">
+            <%= htmlWebpackPlugin.options.widgets.intro %>
+        </div>
+
+        <div class="main__section">
+            <div class="bg-pattern bg-pattern--1">
+                <%= htmlWebpackPlugin.options.widgets.about %>
+            </div>
+        </div>
+
+        <div class="main__section mb-180">
+            <%= htmlWebpackPlugin.options.widgets.map %>
+        </div>
+        <div class="main__section mb-180">
+            <%= htmlWebpackPlugin.options.widgets.sliderAbout %>
+            </div>
+        <div class="main__section mb-180">
+            <%= htmlWebpackPlugin.options.widgets.filter %>
+        </div>
+        <div class="main__section mb-180">
+            <%= htmlWebpackPlugin.options.widgets.sliderPathes %>
+        </div>
+        <div class="main__section mb-180">
+            <%= htmlWebpackPlugin.options.widgets.news %>
+        </div>
+        <div class="main__section mb-180">
+            <%= htmlWebpackPlugin.options.widgets.partners %>
+        </div>
+        <div class="main__section mb-180">
+            <%= htmlWebpackPlugin.options.widgets.more %>
+        </div>
+        <div class="main__section mb-180">
+            <%= htmlWebpackPlugin.options.widgets.eco %>
+        </div>
+        <div class="main__section">
     </div>
     <%= htmlWebpackPlugin.options.widgets.footer %>
 </body>

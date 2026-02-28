@@ -1,5 +1,47 @@
 .header {
 	display: flex;
+	padding: r(20) 0;
 	align-items: center;
 	justify-content: space-between;
+	min-height: var(--header-height);
+
+	&__aside {
+
+	}
+
+	&__main {
+
+	}
+
+	&__mobile {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+
+@media (max-width: 1299px) {
+	.header {
+		padding: r(17) 0;
+
+		&__aside {
+			width: calc(100% / 3);
+
+			&--end {
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		&__main {
+			display: none;
+		}
+
+		&__mobile {
+			display: flex;
+			visibility: visible;
+			width: calc(100% / 3);
+			justify-content: flex-end;
+		}
+	}
 }

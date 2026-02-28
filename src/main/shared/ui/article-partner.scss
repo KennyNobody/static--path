@@ -1,0 +1,29 @@
+.article-partner {
+	display: flex;
+	height: r(146);
+	align-items: center;
+	transition: 0.3s all;
+	border-radius: r(24);
+	justify-content: center;
+	background-color: var(--color-white);
+
+	&:hover {
+		opacity: 0.7;
+	}
+
+	img {
+		width: auto;
+		height: r(42);
+		display: block;
+	}
+}
+
+@media (max-width: 1299px) {
+	.article-partner {
+		height: r(56);
+
+		img {
+			height: r(16);
+		}
+	}
+}

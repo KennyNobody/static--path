@@ -1,0 +1,21 @@
+.nav {
+	gap: r(52);
+	display: flex;
+	align-items: center;
+
+	&__link {
+		font-size: r(13);
+		transition: 0.3s all;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&__icon {
+		width: r(28);
+		height: r(28);
+		display: block;
+		fill: var(--color-white);
+	}
+}

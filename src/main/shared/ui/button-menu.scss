@@ -1,0 +1,40 @@
+.button-menu {
+	padding: r(5);
+	cursor: pointer;
+	transition: 0.3s all;
+
+	&:hover {
+		opacity: 0.7;
+	}
+
+	&__icon {
+		width: r(14);
+		height: r(16);
+		display: block;
+		fill: var(--color-accent-light);
+
+		&--closed {
+			display: block;
+			visibility: visible;
+		}
+
+		&--opened {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	&.active {
+		.button-menu__icon {
+			&--opened {
+				display: block;
+				visibility: visible;
+			}
+
+			&--closed {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+}

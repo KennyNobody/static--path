@@ -1,0 +1,27 @@
+.logo {
+	display: block;
+
+	@at-root {
+		a#{&} {
+			transition: 0.3s;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__picture {
+		width: auto;
+		height: r(41);
+		display: block;
+	}
+}
+
+@media (max-width: 1299px) {
+	.logo {
+		&__picture {
+			height: r(15);
+		}
+	}
+}
