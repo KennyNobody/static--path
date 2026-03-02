@@ -1,0 +1,12 @@
+.item-tag {
+	width: r(28);
+	height: r(28);
+	border-radius: r(28);
+	background-color: var(--color-dark);
+
+	&__icon {
+		width: 100%;
+		height: 100%;
+		fill: var(--color-accent-light);
+	}
+}

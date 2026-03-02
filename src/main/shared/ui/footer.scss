@@ -1,3 +1,10 @@
 .footer {
 	padding: r(65) 0 r(120);
 }
+
+
+@media (max-width: 1299px) {
+	.footer {
+		padding: r(20) 0 r(78);
+	}
+}

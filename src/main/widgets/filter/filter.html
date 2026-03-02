@@ -1,7 +1,621 @@
 <section class="section">
     <div class="container">
-        <h2 class="title title--regular">
-            Подбор маршрута
-        </h2>
+        <div class="toolbar mb-50 mbm-30">
+            <div class="toolbar__title">
+                <h2 class="title title--regular">
+                    Подбор маршрута
+                </h2>
+            </div>
+            <div class="toolbar__controls">
+                <a href="" class="button button--accent button--fill">
+                    Все маршруты
+                </a>
+            </div>
+        </div>
+        <div class="catalog">
+            <div class="catalog__head">
+                <div class="filter-desktop" data-filter="block">
+                    <div class="filter-desktop__group filter-desktop__group--select" data-filter="group-1">
+                        <select name="regions" class="select">
+                            <option value="" disabled selected>
+                                Регионы
+                            </option>
+                            <option value="all">Все</option>
+                            <option value="">Дагестан</option>
+                            <option value="">Чечня</option>
+                            <option value="">Ингушетия</option>
+                            <option value="">Северная Осетия</option>
+                            <option value="">Кабардино-Балкария</option>
+                            <option value="">Карачаево-Черкесия</option>
+                            <option value="">Краснодарский край</option>
+                        </select>
+                        <select name="season" class="select">
+                            <option value="" disabled selected>
+                                Сезон
+                            </option>
+                            <option value="">Все</option>
+                            <option value="">Весна</option>
+                            <option value="">Лето</option>
+                            <option value="">Зима</option>
+                        </select>
+                        <select name="weight" class="select">
+                            <option value="" disabled selected>
+                                Сложность
+                            </option>
+                            <option value="">Все</option>
+                            <option value="">Легкая</option>
+                            <option value="">Средняя</option>
+                            <option value="">Максимальная</option>
+                        </select>
+                        <select name="length" class="select">
+                            <option value="" disabled selected>
+                                Протяженность
+                            </option>
+                            <option value="">Все</option>
+                        </select>
+                        <select name="time" class="select">
+                            <option value="" disabled selected>
+                                Среднее время
+                            </option>
+                            <option value="">Все</option>
+                        </select>
+                        <select name="height" class="select">
+                            <option value="" disabled selected>
+                                Перепад высот
+                            </option>
+                            <option value="">Все</option>
+                        </select>
+                    </div>
+                    <div class="filter-desktop__group filter-desktop__group--search" data-filter="group-2" hidden="hidden">
+                        <form action="" class="form-search">
+                            <input type="text" class="form-search__input">
+                        </form>
+                    </div>
+                    <div class="filter-desktop__controls" data-filter="control-1">
+                        <button class="button-filter" data-filter="button-2">
+                            <svg class="button-filter__icon">
+                                <use href="assets/sprite.svg#icon-search"></use>
+                            </svg>
+                            <span class="button-filter__text">
+                                Поиск
+                            </span>
+                        </button>
+                    </div >
+                    <div class="filter-desktop__controls" data-filter="control-2" hidden="hidden">
+                        <button class="button-filter" data-filter="button-1">
+                            <span class="button-filter__text">
+                                Назад
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog__items">
+                <div class="grid">
+                    <div class="grid__col grid__col--4">
+                        <a href="" class="article-path">
+                            <div class="article-path__head">
+                                <h3 class="article-path__title">
+                                    Горы мастеров
+                                </h3>
+                                <div class="article-path__marker">
+                                    <div class="caption-marker">
+                                        <svg class="caption-marker__icon">
+                                            <use href="assets/sprite.svg#icon-marker-2"></use>
+                                        </svg>
+                                        <span class="caption-marker__text">
+                                            Дагестан
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-path__wrapper">
+                                <div class="article-path__picture">
+                                    <img src="./assets/images/mock.svg" alt="#">
+                                </div>
+                                <div class="article-path__content">
+                                    <div class="tags">
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-autumn"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-snow"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-flower"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-sun"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="article-path__button">
+                                        <div class="button button--fill button--accent">
+                                            Подробнее
+                                        </div>
+                                    </div>
+                                    <div class="tags">
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                Средний
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                6-7 Дней
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                80 Км
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                2 Км
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col--4">
+                        <a href="" class="article-path">
+                            <div class="article-path__head">
+                                <h3 class="article-path__title">
+                                    Горы мастеров
+                                </h3>
+                                <div class="article-path__marker">
+                                    <div class="caption-marker">
+                                        <svg class="caption-marker__icon">
+                                            <use href="assets/sprite.svg#icon-marker-2"></use>
+                                        </svg>
+                                        <span class="caption-marker__text">
+                                            Дагестан
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-path__wrapper">
+                                <div class="article-path__picture">
+                                    <img src="./assets/images/mock.svg" alt="#">
+                                </div>
+                                <div class="article-path__content">
+                                    <div class="tags">
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-autumn"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-snow"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-flower"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-sun"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="article-path__button">
+                                        <div class="button button--fill button--accent">
+                                            Подробнее
+                                        </div>
+                                    </div>
+                                    <div class="tags">
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                Средний
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                6-7 Дней
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                80 Км
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                2 Км
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col--4">
+                        <a href="" class="article-path">
+                            <div class="article-path__head">
+                                <h3 class="article-path__title">
+                                    Горы мастеров
+                                </h3>
+                                <div class="article-path__marker">
+                                    <div class="caption-marker">
+                                        <svg class="caption-marker__icon">
+                                            <use href="assets/sprite.svg#icon-marker-2"></use>
+                                        </svg>
+                                        <span class="caption-marker__text">
+                                            Дагестан
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-path__wrapper">
+                                <div class="article-path__picture">
+                                    <img src="./assets/images/mock.svg" alt="#">
+                                </div>
+                                <div class="article-path__content">
+                                    <div class="tags">
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-autumn"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-snow"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-flower"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-sun"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="article-path__button">
+                                        <div class="button button--fill button--accent">
+                                            Подробнее
+                                        </div>
+                                    </div>
+                                    <div class="tags">
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                Средний
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                6-7 Дней
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                80 Км
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                2 Км
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col--4">
+                        <a href="" class="article-path">
+                            <div class="article-path__head">
+                                <h3 class="article-path__title">
+                                    Горы мастеров
+                                </h3>
+                                <div class="article-path__marker">
+                                    <div class="caption-marker">
+                                        <svg class="caption-marker__icon">
+                                            <use href="assets/sprite.svg#icon-marker-2"></use>
+                                        </svg>
+                                        <span class="caption-marker__text">
+                                            Дагестан
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-path__wrapper">
+                                <div class="article-path__picture">
+                                    <img src="./assets/images/mock.svg" alt="#">
+                                </div>
+                                <div class="article-path__content">
+                                    <div class="tags">
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-autumn"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-snow"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-flower"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-sun"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="article-path__button">
+                                        <div class="button button--fill button--accent">
+                                            Подробнее
+                                        </div>
+                                    </div>
+                                    <div class="tags">
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                Средний
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                6-7 Дней
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                80 Км
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                2 Км
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col--4">
+                        <a href="" class="article-path">
+                            <div class="article-path__head">
+                                <h3 class="article-path__title">
+                                    Горы мастеров
+                                </h3>
+                                <div class="article-path__marker">
+                                    <div class="caption-marker">
+                                        <svg class="caption-marker__icon">
+                                            <use href="assets/sprite.svg#icon-marker-2"></use>
+                                        </svg>
+                                        <span class="caption-marker__text">
+                                            Дагестан
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-path__wrapper">
+                                <div class="article-path__picture">
+                                    <img src="./assets/images/mock.svg" alt="#">
+                                </div>
+                                <div class="article-path__content">
+                                    <div class="tags">
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-autumn"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-snow"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-flower"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-sun"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="article-path__button">
+                                        <div class="button button--fill button--accent">
+                                            Подробнее
+                                        </div>
+                                    </div>
+                                    <div class="tags">
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                Средний
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                6-7 Дней
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                80 Км
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                2 Км
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="grid__col grid__col--4">
+                        <a href="" class="article-path">
+                            <div class="article-path__head">
+                                <h3 class="article-path__title">
+                                    Горы мастеров
+                                </h3>
+                                <div class="article-path__marker">
+                                    <div class="caption-marker">
+                                        <svg class="caption-marker__icon">
+                                            <use href="assets/sprite.svg#icon-marker-2"></use>
+                                        </svg>
+                                        <span class="caption-marker__text">
+                                            Дагестан
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-path__wrapper">
+                                <div class="article-path__picture">
+                                    <img src="./assets/images/mock.svg" alt="#">
+                                </div>
+                                <div class="article-path__content">
+                                    <div class="tags">
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-autumn"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-snow"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-flower"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="item-tag">
+                                            <svg class="item-tag__icon">
+                                                <use href="assets/sprite.svg#icon-sun"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="article-path__button">
+                                        <div class="button button--fill button--accent">
+                                            Подробнее
+                                        </div>
+                                    </div>
+                                    <div class="tags">
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                Средний
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                6-7 Дней
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                80 Км
+                                            </span>
+                                        </div>
+                                        <div class="item-factoid">
+                                            <svg class="item-factoid__icon">
+                                                <use href="assets/sprite.svg#icon-weight"></use>
+                                            </svg>
+                                            <span class="item-factoid__text">
+                                                2 Км
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

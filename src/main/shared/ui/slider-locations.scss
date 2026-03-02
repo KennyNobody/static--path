@@ -1,0 +1,17 @@
+.slider-locations {
+	position: relative;
+	clip-path: inset(0 -100vw 0 0);
+
+	&__wrapper {
+		z-index: 0;
+	}
+
+	&__controls {
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+	}
+
+	&__slide {
+	}
+}

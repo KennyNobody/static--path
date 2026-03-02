@@ -1,0 +1,17 @@
+.caption-marker {
+	gap: r(12);
+	display: flex;
+
+	&__icon {
+		width: r(20);
+		height: r(20);
+		display: block;
+		transition: 0.3s all;
+		fill: var(--color-accent-light);
+	}
+
+	&__text {
+		font-size: r(16);
+		line-height: 1.25;
+	}
+}

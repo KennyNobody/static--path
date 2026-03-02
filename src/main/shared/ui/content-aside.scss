@@ -1,0 +1,28 @@
+.content-aside {
+	gap: r(44);
+	display: flex;
+	flex-direction: column;
+
+	&__picture {
+		display: none;
+	}
+}
+
+@media (max-width: 1299px) {
+	.content-aside {
+		gap: 0;
+
+		&__title {
+			margin-bottom: r(45);
+		}
+
+		&__picture {
+			display: block;
+			margin-bottom: r(40);
+		}
+
+		&__main {
+			margin-bottom: r(30);
+		}
+	}
+}

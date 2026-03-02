@@ -20,8 +20,22 @@
 
 @media (max-width: 1299px) {
 	.logo {
-		&__picture {
-			height: r(15);
+		&--mob-small {
+			.logo__picture {
+				height: r(15);
+			}
+		}
+
+		&--mob-medium {
+			.logo__picture {
+				height: r(28);
+			}
+		}
+
+		&--mob-large {
+			.logo__picture {
+				height: r(48);
+			}
 		}
 	}
 }

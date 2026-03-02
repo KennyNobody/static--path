@@ -1,0 +1,22 @@
+.item-factoid {
+	gap: r(8);
+	display: flex;
+	padding: r(4) r(8);
+	align-items: center;
+	border-radius: r(8);
+	background-color: var(--color-dark);
+
+	&__icon {
+		width: r(14);
+		height: r(14);
+		display: block;
+		fill: var(--color-accent-light);
+	}
+
+	&__text {
+		font-weight: 500;
+		font-size: r(11);
+		line-height: 1.25;
+		color: var(--color-white);
+	}
+}

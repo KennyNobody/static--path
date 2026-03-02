@@ -1,10 +1,18 @@
 .grid {
-	gap: r(16);
+	gap: r(24);
 	width: 100%;
 	display: grid;
 	grid-auto-flow: dense;
 	grid-template-rows: minmax(0, 1fr);
 	grid-template-columns: repeat(12, minmax(0, 1fr));
+
+	&--center {
+		align-items: center;
+	}
+
+	&--end {
+		align-items: end;
+	}
 
 	&__col {
 		&--1 {
@@ -37,6 +45,22 @@
 
 		&--8 {
 			grid-column: span 8;
+		}
+
+		&--9 {
+			grid-column: span 9;
+		}
+
+		&--10 {
+			grid-column: span 10;
+		}
+
+		&--11 {
+			grid-column: span 11;
+		}
+
+		&--12 {
+			grid-column: span 12;
 		}
 	}
 }

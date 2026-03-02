@@ -1,0 +1,25 @@
+.button-filter {
+	gap: r(20);
+	height: r(48);
+	width: r(162);
+	display: flex;
+	cursor: pointer;
+	font-size: r(18);
+	line-height: 1.25;
+	align-items: center;
+	border-radius: r(16);
+	transition: 0.3s all;
+	justify-content: center;
+	color: var(--color-white);
+	background-color: var(--color-black);
+
+	&:hover {
+		opacity: 0.7;
+	}
+
+	&__icon {
+		width: r(20);
+		height: r(20);
+		fill: var(--color-white);
+	}
+}

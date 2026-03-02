@@ -1,12 +1,18 @@
 .button {
 	height: r(48);
+	display: flex;
 	font-weight: 500;
 	font-size: r(18);
+	align-items: center;
 	padding: r(13) r(50);
 	border-radius: r(16);
+	transition: 0.3s all;
+	justify-content: center;
+	color: var(--color-white);
 
 	&--fill {
-
+		min-width: r(196);
+		width: fit-content;
 	}
 
 	&--full {
@@ -15,5 +21,17 @@
 
 	&--accent {
 		background-color: var(--color-accent-light);
+
+		&:hover {
+			background-color: #F89827;
+		}
+	}
+}
+
+@media (max-width: 1299px) {
+	.button {
+		&--mob-full {
+			width: 100%;
+		}
 	}
 }

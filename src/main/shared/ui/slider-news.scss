@@ -1,0 +1,11 @@
+.slider-news {
+	gap: r(60);
+	display: flex;
+	flex-direction: column;
+
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}

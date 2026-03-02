@@ -1,0 +1,34 @@
+.content-footer {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&__links {
+		gap: r(23);
+		flex-grow: 1;
+		display: flex;
+		margin-bottom: r(55);
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	&__logos {
+		display: flex;
+		flex-shrink: 0;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+}
+
+@media (max-width: 1299px) {
+	.content-footer {
+		&__links {
+			margin-top: r(80);
+		}
+
+		&__captions {
+			margin-bottom: r(28);
+		}
+	}
+}

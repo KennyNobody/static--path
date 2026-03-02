@@ -21,3 +21,24 @@ body {
 		visibility: hidden;
 	}
 }
+
+.mob-visible {
+	display: none;
+	visibility: hidden;
+
+	@media (max-width: 1299px) {
+		display: block;
+		visibility: visible;
+	}
+}
+
+
+.relative {
+	position: relative;
+}
+
+.z-index {
+	&-2 {
+		z-index: 2;
+	}
+}

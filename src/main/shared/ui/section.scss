@@ -1,4 +1,12 @@
 .section {
+	&.fixed {
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 3;
+		position: fixed;
+	}
+
 	&.bg-dark {
 		color: var(--color-white);
 		background-color: var(--color-black);

@@ -1,4 +1,17 @@
+import './icon-arrow-left.svg';
+import './icon-arrow-right.svg';
+import './icon-autumn.svg';
 import './icon-ball.svg';
+import './icon-call.svg';
 import './icon-close.svg';
+import './icon-flower.svg';
+import './icon-link.svg';
+import './icon-mail.svg';
+import './icon-marker.svg';
+import './icon-marker-2.svg';
 import './icon-menu.svg';
 import './icon-profile.svg';
+import './icon-search.svg';
+import './icon-snow.svg';
+import './icon-sun.svg';
+import './icon-weight.svg';

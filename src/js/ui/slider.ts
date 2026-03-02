@@ -1,5 +1,6 @@
 import 'swiper/css';
 import Swiper from "swiper";
+import { Navigation, Pagination } from 'swiper/modules';
 
 class Slider {
     sliderInstance: Swiper | null = null;
@@ -9,6 +10,8 @@ class Slider {
 
         if (mode === 'partners') this.initPartnersSlider(el);
         if (mode === 'news') this.initNewsSlider(el);
+        if (mode === 'intro') this.initIntroSlider(el);
+        if (mode === 'locations') this.initLocationsSlider(el);
     }
 
     initPartnersSlider = (el: HTMLElement) => {
@@ -40,8 +43,13 @@ class Slider {
             spaceBetween: 24,
             slidesPerView: 'auto',
             // enabled: true,
-            // modules: [Pagination],
+            modules: [Navigation],
             // allowTouchMove: false,
+            navigation: {
+                prevEl: '[data-slider-control="left"]',
+                nextEl: '[data-slider-control="right"]',
+                disabledClass: 'disabled',
+            },
             breakpoints: {
                 1299: {
                     slidesPerView: 3,
@@ -55,6 +63,87 @@ class Slider {
             //     }
             // }
         });
+    }
+
+    initIntroSlider = (el: HTMLElement) => {
+        this.sliderInstance = new Swiper(el, {
+            // loop: true,
+            spaceBetween: 24,
+            slidesPerView: 1,
+            // enabled: true,
+            modules: [Pagination],
+            // allowTouchMove: false,
+            // breakpoints: {
+            //     1299: {
+            //         slidesPerView: 3,
+            //     }
+            // },
+            pagination: {
+                clickable: true,
+                el: '.slider-intro__pagination',
+                bulletClass: 'bullet',
+                bulletActiveClass: 'active'
+
+            },
+            // on: {
+            //     breakpoint: (el: Swiper) => {
+            //         if (!el.params.enabled) {
+            //             removeInlineStyles(el);
+            //         }
+            //     }
+            // }
+        });
+    }
+
+    initLocationsSlider = (el: HTMLElement) => {
+        this.sliderInstance = new Swiper(el, {
+            spaceBetween: 24,
+            slidesPerView: 'auto',
+            modules: [Navigation],
+            navigation: {
+                prevEl: '[data-slider-control="left"]',
+                nextEl: '[data-slider-control="right"]',
+                disabledClass: 'disabled',
+            },
+
+            // on: {
+            //     init(swiper: Swiper) {
+            //         updateSlideClasses(swiper);
+            //     },
+            //     slideChange(swiper: Swiper) {
+            //         updateSlideClasses(swiper);
+            //     },
+            // },
+        });
+
+        // function updateSlideClasses(swiper: Swiper): void {
+        //     const slides = swiper.slides as HTMLElement[];
+        //     const activeIndex = swiper.activeIndex;
+        //     const activeSlide = slides[activeIndex];
+        //
+        //     // Сбрасываем все стили ДО считывания размеров
+        //     slides.forEach((slide: HTMLElement) => {
+        //         slide.style.width = '';
+        //         slide.style.height = '';
+        //     });
+        //
+        //     const activeWidth: number = activeSlide?.offsetWidth ?? 0;
+        //     const activeHeight: number = activeSlide?.offsetHeight ?? 0;
+        //
+        //     slides.forEach((slide: HTMLElement, index: number) => {
+        //         slide.classList.remove('prev', 'next');
+        //
+        //         if (index < activeIndex) {
+        //             slide.classList.add('prev');
+        //         } else if (index > activeIndex) {
+        //             slide.classList.add('next');
+        //             slide.style.width = `${activeWidth / 2.4}px`;
+        //             slide.style.height = `${activeHeight / 2.4}px`;
+        //         }
+        //     });
+        //
+        //     swiper.update();
+        // }
     }
 }
 

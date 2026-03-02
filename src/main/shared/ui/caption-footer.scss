@@ -1,0 +1,19 @@
+.caption-footer {
+	gap: r(38);
+	display: flex;
+	flex-direction: column;
+
+	&__item {
+		font-size: r(13);
+
+		&.accent {
+			color: var(--color-accent-dark);
+		}
+	}
+}
+
+@media (max-width: 1299px) {
+	.caption-footer {
+		gap: r(20);
+	}
+}
