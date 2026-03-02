@@ -9,6 +9,7 @@ import './icon-link.svg';
 import './icon-mail.svg';
 import './icon-marker.svg';
 import './icon-marker-2.svg';
+import './icon-marker-2.svg';
 import './icon-menu.svg';
 import './icon-profile.svg';
 import './icon-search.svg';

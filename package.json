@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/KennyNobody/polosatik#readme",
   "devDependencies": {
+    "@types/leaflet": "^1.9.21",
     "@types/node": "^18.14.1",
     "@types/svg-sprite-loader": "^3.9.9",
     "@types/webpack": "^5.28.0",
@@ -62,6 +63,9 @@
     "last 3 versions"
   ],
   "dependencies": {
+    "@panzoom/panzoom": "^4.6.1",
+    "leaflet": "^1.9.4",
+    "leaflet.tilelayer.colorfilter": "^2.0.0",
     "swiper": "^12.1.2",
     "the-new-css-reset": "^1.11.2"
   }
