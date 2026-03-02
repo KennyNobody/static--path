@@ -1,1 +1,0 @@
-!function(){"use strict";var n=function(){this.init=function(){console.log("App Inited")},this.init()};document.addEventListener("DOMContentLoaded",(function(){new n}))}();
