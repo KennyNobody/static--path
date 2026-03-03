@@ -10,7 +10,7 @@ class Map {
         this.items = Array.from(this.el.querySelectorAll<HTMLElement>('[data-map="item"]'));
 
         this.bindEvents();
-        this.initPanzoom();
+        // this.initPanzoom();
     }
 
     private bindEvents(): void {
