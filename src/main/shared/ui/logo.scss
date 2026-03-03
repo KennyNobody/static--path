@@ -17,6 +17,11 @@
 		display: block;
 	}
 }
+.section.bg-dark.menu {
+	.logo__inverted {
+		fill: var(--color-black) !important;
+	}
+}
 
 @media (max-width: 1299px) {
 	.logo {

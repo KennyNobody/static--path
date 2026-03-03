@@ -25,5 +25,10 @@
 	&.bg-dark {
 		color: var(--color-white);
 		background-color: var(--color-black);
+
+		&.menu {
+			color: var(--color-black);
+			background-color: var(--color-white);;
+		}
 	}
 }
