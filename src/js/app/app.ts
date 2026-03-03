@@ -1,6 +1,7 @@
 import {Slider} from "../ui/slider";
 import {Filter} from "../ui/filter";
 import {Map} from "../ui/map";
+import {LeafletApp} from "../ui/leaflet";
 
 class App {
     constructor() {
@@ -11,7 +12,8 @@ class App {
         console.log('App Inited');
         this.initSliders();
         this.initFilters();
-        this.initMap();
+        this.initLeafletApp();
+        // this.initMap();
     }
 
     initSliders = () => {
@@ -26,11 +28,17 @@ class App {
         if (el) new Filter(el);
     }
 
-    initMap = () => {
-        const el: HTMLElement = document.querySelector('[data-map="block"]');
+    initLeafletApp = () => {
+        const el = document.querySelector('[data-leaflet="block"]');
 
-        if (el) new Map(el);
+        if (el) new LeafletApp(el);
     }
+
+    // initMap = () => {
+    //     const el: HTMLElement = document.querySelector('[data-map="block"]');
+    //
+    //     if (el) new Map(el);
+    // }
 }
 
 export {App};
