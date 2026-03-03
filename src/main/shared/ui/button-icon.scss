@@ -1,0 +1,16 @@
+.button-icon {
+	width: r(48);
+	height: r(48);
+	display: flex;
+	align-items: center;
+	border-radius: r(12);
+	justify-content: center;
+	background-color: var(--color-black);
+
+	&__icon {
+		width: r(24);
+		height: r(24);
+		display: block;
+		fill: var(--color-white);
+	}
+}

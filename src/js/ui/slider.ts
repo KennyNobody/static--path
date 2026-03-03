@@ -99,11 +99,18 @@ class Slider {
         this.sliderInstance = new Swiper(el, {
             spaceBetween: 24,
             slidesPerView: 'auto',
-            modules: [Navigation],
+            modules: [Navigation, Pagination],
             navigation: {
                 prevEl: '[data-slider-control="left"]',
                 nextEl: '[data-slider-control="right"]',
                 disabledClass: 'disabled',
+            },
+            pagination: {
+                clickable: true,
+                el: '.slider-locations__pagination',
+                bulletClass: 'bullet',
+                bulletActiveClass: 'active'
+
             },
 
             // on: {

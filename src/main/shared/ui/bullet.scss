@@ -1,6 +1,6 @@
 .bullet {
-	width: r(16);
-	height: r(16);
+	width: r(8);
+	height: r(8);
 	display: block;
 	border-radius: r(16);
 	background-color: #D9D9D9;
@@ -12,7 +12,7 @@
 
 @media (max-width: 1299px) {
 	.bullet {
-		width: r(12);
-		height: r(12);
+		width: r(8);
+		height: r(8);
 	}
 }

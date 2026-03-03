@@ -1,0 +1,22 @@
+.button-profile {
+	gap: r(12);
+	display: flex;
+	height: r(48);
+	width: r(210);
+	font-weight: 500;
+	align-items: center;
+	border-radius: r(16);
+	justify-content: center;
+	color: var(--color-white);
+	background-color: var(--color-accent-light);
+
+	&__icon {
+		width: r(28);
+		height: r(28);
+		fill: var(--color-white);
+	}
+
+	&__text {
+		font-size: r(16);
+	}
+}

@@ -7,9 +7,28 @@
 	}
 
 	&__controls {
+		right: 0;
+		bottom: 0;
 		display: flex;
+		position: absolute;
 		align-items: flex-end;
 		justify-content: flex-end;
+
+		@media (max-width: 1299px) {
+			display: none;
+		}
+	}
+
+	&__pagination {
+		display: none;
+
+		@media (max-width: 1299px) {
+			right: 0;
+			gap: r(8);
+			bottom: 0;
+			display: flex;
+			position: absolute;
+		}
 	}
 
 	&__slide {

@@ -1,4 +1,4 @@
-<header class="section bg-dark fixed">
+<header class="section bg-dark fixed section-header" data-header="block">
     <div class="container">
         <div class="header">
             <div class="header__aside header__aside--start">
@@ -41,7 +41,7 @@
             </div>
             <div class="header__mobile">
                 <!-- Добавить класс active -->
-                <button class="button-menu">
+                <button class="button-menu" data-menu="button">
                     <svg class="button-menu__icon button-menu__icon--closed">
                         <use href="assets/sprite.svg#icon-menu"></use>
                     </svg>
@@ -49,6 +49,38 @@
                         <use href="assets/sprite.svg#icon-close"></use>
                     </svg>
                 </button>
+            </div>
+            <div class="header__mobile-menu">
+                <div class="menu-mobile">
+                    <nav class="menu-mobile__nav">
+                        <a href="" class="menu-mobile__link">
+                            О проекте
+                        </a>
+                        <a href="" class="menu-mobile__link">
+                            Уникальное
+                        </a>
+                        <a href="" class="menu-mobile__link">
+                            Маршруты
+                        </a>
+                        <a href="" class="menu-mobile__link">
+                            Курорты
+                        </a>
+                        <a href="" class="menu-mobile__link">
+                            Новости
+                        </a>
+                        <a href="" class="menu-mobile__link">
+                            Контакты
+                        </a>
+                    </nav>
+                    <a href="" class="button-profile">
+                        <svg class="button-profile__icon">
+                            <use href="assets/sprite.svg#icon-user"></use>
+                        </svg>
+                        <span class="button-profile__text">
+                            Личный кабинет
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

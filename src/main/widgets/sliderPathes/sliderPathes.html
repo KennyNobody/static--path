@@ -1,7 +1,99 @@
 <section class="section">
     <div class="container">
-        <h2 class="title title--regular">
-            Курорты тропы
-        </h2>
+        <!-- Из-за слишком больших отличий в дизайне, блок дублируется два раза - для десктопа и для мобилки -->
+        <div class="grid grid--end">
+            <div class="grid__col grid__col--5 grid__col-mob--4 relative z-index-2">
+                <div class="content-aside">
+                    <div class="content-aside__title">
+                        <h2 class="title title--regular">
+                            Курорты тропы
+                        </h2>
+                    </div>
+                    <div class="content-aside__main mob-hidden">
+                        <div class="editor editor--regular">
+                            <p>
+                                Горный район Приэльбрусья в Кабардино-Балкарской Республике уже более полувека является популярным местом на туристической карте России, в которое стремятся приехать десятки тысяч спортсменов и любителей зимнего отдыха со всего мира. Смотровые площадки, горнолыжные трассы, сноупарк, пешие экомаршруты и возможность восхождения на Эльбрус
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content-aside__control mob-hidden">
+                        <a href="" class="button button--accent button--fill">
+                            Подробнее
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="grid__col grid__col--1 mob-hidden"></div>
+            <div class="grid__col grid__col--6 grid__col-mob--4 mbm-30">
+                <div class="swiper-container slider-locations" data-slider="locations">
+                    <div class="swiper-wrapper slider-locations__wrapper">
+                        <div class="swiper-slide slider-locations__slide">
+                            <div class="slide-info">
+                                <img class="slide-info__img" src="./assets/images/slide-ill.png" alt="">
+                                <p class="slide-info__title">
+                                    Эльбрус
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slider-locations__slide">
+                            <div class="slide-info">
+                                <img class="slide-info__img" src="./assets/images/slide-ill.png" alt="">
+                                <p class="slide-info__title">
+                                    Ляжгинский водопад
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slider-locations__slide">
+                            <div class="slide-info">
+                                <img class="slide-info__img" src="./assets/images/slide-ill.png" alt="">
+                                <p class="slide-info__title">
+                                    Эльбрус
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slider-locations__slide">
+                            <div class="slide-info">
+                                <img class="slide-info__img" src="./assets/images/slide-ill.png" alt="">
+                                <p class="slide-info__title">
+                                    Ляжгинский водопад
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-locations__controls">
+                        <button class="button-control" data-slider-control="left">
+                            <svg class="button-control__icon">
+                                <use href="assets/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                        </button>
+                        <button class="button-control" data-slider-control="right">
+                            <svg class="button-control__icon">
+                                <use href="assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="slider-locations__pagination"></div>
+                </div>
+            </div>
+            <div class="mob-visible grid__col-mob--4">
+                <div class="content-aside">
+                    <div class="content-aside__main">
+                        <div class="editor editor--regular">
+                            <p>
+                                <strong>Ляжгинский водопад</strong>
+                            </p>
+                            <p>
+                                В рамках концепции ESG ООН разработала резолюцию «Повестка дня в области устойчивого развития на период до 2030 года», которой сформулировано 17 глобальных целей. Любой бизнес, не только крупный, может содействовать достижению этих целей на своём уровне. Чтобы оценить эффект, используют критерии ESG.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content-aside__control">
+                        <a href="" class="button button--accent button--fill button--mob-full">
+                            Подробнее
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

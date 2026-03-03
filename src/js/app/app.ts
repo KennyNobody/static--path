@@ -2,6 +2,8 @@ import {Slider} from "../ui/slider";
 import {Filter} from "../ui/filter";
 import {Map} from "../ui/map";
 import {LeafletApp} from "../ui/leaflet";
+import {Header} from "../ui/header";
+import {Input} from "../ui/input";
 
 class App {
     constructor() {
@@ -13,7 +15,9 @@ class App {
         this.initSliders();
         this.initFilters();
         this.initLeafletApp();
+        this.initHeader();
         // this.initMap();
+        this.initInput();
     }
 
     initSliders = () => {
@@ -39,6 +43,18 @@ class App {
     //
     //     if (el) new Map(el);
     // }
+
+    initHeader = () => {
+        const el: HTMLElement = document.querySelector('[data-header="block"]');
+
+        if (el) new Header(el);
+    }
+
+    initInput = () => {
+        const els: NodeListOf<Element> = document.querySelectorAll('[data-input="password"]');
+
+        els.forEach((item) => new Input(item));
+    }
 }
 
 export {App};

@@ -1,5 +1,5 @@
 .section {
-	overflow: hidden;
+	//overflow: hidden;
 
 	&.fixed {
 		top: 0;
@@ -7,6 +7,19 @@
 		right: 0;
 		z-index: 3;
 		position: fixed;
+	}
+
+	&.bg-dark {
+
+	}
+
+	&.section-header {
+		transition: 0.3s all;
+		color: var(--color-white);
+
+		&.active {
+			background-color: var(--color-black);
+		}
 	}
 
 	&.bg-dark {

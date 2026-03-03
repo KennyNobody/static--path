@@ -1,0 +1,18 @@
+.caption-icon {
+	gap: r(8);
+	display: flex;
+	align-items: center;
+	margin-bottom: r(38);
+	justify-content: center;
+
+	&__icon {
+		opacity: 0.5;
+		width: r(20);
+		height: r(20);
+		fill: var(--color-accent-light);
+	}
+
+	&__text {
+		font-size: r(14);
+	}
+}

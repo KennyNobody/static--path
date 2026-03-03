@@ -1,0 +1,33 @@
+.form {
+	&__group {
+		gap: r(20);
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__footer {
+		gap: r(20);
+		display: flex;
+		margin-top: r(56);
+		flex-direction: column;
+
+		&--small {
+			margin-top: r(24);
+		}
+
+		&--large{
+			margin-top: r(56);
+		}
+	}
+
+	&__text {
+		color: #1E202080;
+		text-align: center;
+	}
+
+	&__error-text {
+		color: #FF6978;
+		font-size: r(13);
+		text-align: center;
+	}
+}

@@ -1,0 +1,21 @@
+.modal {
+	border-radius: r(4);
+	padding: r(80) r(20) r(40);
+	border: 1px solid #D5ECFF80;
+	background-color: var(--color-white);
+
+	&__title {
+		font-weight: 700;
+		font-size: r(24);
+		line-height: 1.25;
+		text-align: center;
+
+		&--regular {
+			margin-bottom: r(35);
+		}
+
+		&--main {
+			margin-bottom: r(68);
+		}
+	}
+}

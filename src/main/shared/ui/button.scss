@@ -13,6 +13,7 @@
 	&--fill {
 		min-width: r(196);
 		width: fit-content;
+		white-space: nowrap;
 	}
 
 	&--full {
@@ -25,6 +26,19 @@
 		&:hover {
 			background-color: #F89827;
 		}
+	}
+
+	&--dark {
+		color: var(--color-white);
+		background-color: #002D50;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&--ungle {
+		border-radius: r(8);
 	}
 }
 

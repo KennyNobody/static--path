@@ -16,6 +16,12 @@
 	}
 }
 
+.pb {
+	&-180 {
+		padding-bottom: r(180);
+	}
+}
+
 @media (max-width: 1299px) {
 	.mbm {
 		&-30 {

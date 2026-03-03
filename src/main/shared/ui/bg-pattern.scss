@@ -3,6 +3,13 @@
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-image: url("../assets/images/bg-pattern-1.svg");
+		background-image: url("../assets/images/pattern-map.svg");
+	}
+
+	&--2 {
+		background-size: cover;
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-image: url("../assets/images/main-bg-pattern.svg");
 	}
 }

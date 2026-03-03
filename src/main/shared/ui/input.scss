@@ -1,0 +1,48 @@
+.input {
+	display: block;
+	position: relative;
+
+	&__field {
+		width: 100%;
+		height: r(48);
+		display: block;
+		padding: 0 r(15);
+		border-radius: r(4);
+		border: 1px solid var(--color-accent-light);
+
+		&::placeholder {
+			color: #1E202080;
+		}
+	}
+
+	&__textarea {
+		width: 100%;
+		resize: none;
+		display: block;
+		height: r(120);
+		padding: r(15);
+		border-radius: r(4);
+		border: 1px solid var(--color-accent-light);
+
+		&::placeholder {
+			color: #1E202080;
+		}
+	}
+
+	&__button {
+		top: 50%;
+		bottom: 0;
+		right: r(15);
+		position: absolute;
+		transform: translateY(-50%);
+	}
+
+	&.error {
+		.input {
+			&__field {
+				color: #FF6978;
+				border-color: #FF697880;
+			}
+		}
+	}
+}

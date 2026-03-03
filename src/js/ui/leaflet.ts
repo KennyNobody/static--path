@@ -39,7 +39,10 @@ class LeafletApp {
         });
 
         const popup = `
-        <div class="marker">
+        <div class="marker" data-map="item">
+            <div class="marker__preview" data-map="button">
+                <img class="marker__image" src="${MARKER.icon}" alt="">
+            </div>
             <p class="marker__title">${MARKER.title}</p>
             <a href="${MARKER.link}" class="marker__link">На карту</a>
         </div>
@@ -47,7 +50,11 @@ class LeafletApp {
 
         L.marker(MARKER.coords, { icon })
             .addTo(this.map)
-            .bindPopup(popup);
+            .bindPopup(popup, {
+                className: 'marker-popup',
+                closeButton: false,
+                offset: [0, -42], // [horizontal, vertical]
+            });
     }
 }
 

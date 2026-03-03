@@ -17,6 +17,11 @@
 		display: none;
 		visibility: hidden;
 	}
+
+	&__mobile-menu {
+		display: none;
+		visibility: hidden;
+	}
 }
 
 
@@ -42,6 +47,18 @@
 			visibility: visible;
 			width: calc(100% / 3);
 			justify-content: flex-end;
+		}
+
+		&__mobile-menu {
+			//display: block;
+			//visibility: visible;
+		}
+
+		&.menu {
+			.header__mobile-menu {
+				display: block;
+				visibility: visible;
+			}
 		}
 	}
 }
