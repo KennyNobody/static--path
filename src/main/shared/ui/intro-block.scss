@@ -1,6 +1,34 @@
 .intro-block {
 	color: var(--color-white);
 
+	&--small {
+		.intro-block {
+			&__title {
+				font-size: r(80);
+
+				@media (max-width: 1299px) {
+
+				}
+			}
+
+			&__caption {
+				margin-top: r(35);
+
+				@media (max-width: 1299px) {
+
+				}
+			}
+
+			&__controls {
+				margin-top: r(50);
+
+				@media (max-width: 1299px) {
+					margin-top: r(30);
+				}
+			}
+		}
+	}
+
 	&__title {
 		font-size: r(128);
 		font-weight: 700;

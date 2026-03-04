@@ -4,22 +4,25 @@
 	}
 
 	&__pagination {
-		display: none;
-		visibility: hidden;
+		display: flex;
+		margin-top: r(100);
+	}
+
+	&__slide {
+		transition: 0.3s opacity;
+
+		&.prev {
+			opacity: 0;
+			pointer-events: none;
+			//visibility: hidden;
+		}
 	}
 }
 
 @media (max-width: 1299px) {
 	.slider-intro {
 		&__pagination {
-			display: flex;
-			margin-top: r(30);
-			visibility: visible;
-		}
-
-		&__navigation {
-			display: none;
-			visibility: hidden;
+			margin-top: r(60);
 		}
 	}
 }

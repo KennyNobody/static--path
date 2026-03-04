@@ -4,6 +4,7 @@ import {Map} from "../ui/map";
 import {LeafletApp} from "../ui/leaflet";
 import {Header} from "../ui/header";
 import {Input} from "../ui/input";
+import {SliderSimilar} from "../ui/sliderSimilar";
 
 class App {
     constructor() {
@@ -16,14 +17,20 @@ class App {
         this.initFilters();
         this.initLeafletApp();
         this.initHeader();
-        // this.initMap();
         this.initInput();
+        this.initSimilarSliders();
     }
 
     initSliders = () => {
         const els = document.querySelectorAll('[data-slider]');
 
         els.forEach((item: HTMLElement) => new Slider(item));
+    }
+
+    initSimilarSliders = () => {
+        const els = document.querySelectorAll('[data-similar-slider="block"]');
+
+        els.forEach((item: HTMLElement) => new SliderSimilar(item));
     }
 
     initFilters = () => {

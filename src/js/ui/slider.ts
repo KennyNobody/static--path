@@ -1,9 +1,11 @@
 import 'swiper/css';
 import Swiper from "swiper";
 import { Navigation, Pagination } from 'swiper/modules';
+import {SwiperSlide} from "swiper/element";
 
 class Slider {
     sliderInstance: Swiper | null = null;
+    childInstance: Swiper | null = null;
 
     constructor(el: HTMLElement) {
         const mode = el.getAttribute('data-slider');
@@ -12,6 +14,7 @@ class Slider {
         if (mode === 'news') this.initNewsSlider(el);
         if (mode === 'intro') this.initIntroSlider(el);
         if (mode === 'locations') this.initLocationsSlider(el);
+        if (mode === 'main') this.initMainSlider(el);
     }
 
     initPartnersSlider = (el: HTMLElement) => {
@@ -66,19 +69,60 @@ class Slider {
         });
     }
 
-    initIntroSlider = (el: HTMLElement) => {
-        this.sliderInstance = new Swiper(el, {
+    initMainSlider = (el: HTMLElement) => {
+        this.childInstance = new Swiper(el, {
             // loop: true,
-            spaceBetween: 24,
+            // spaceBetween: 24,
             slidesPerView: 1,
+            allowTouchMove: false, // управляется только программно
+            effect: 'fade',
             // enabled: true,
-            modules: [Pagination, Navigation],
+            // modules: [Pagination, Navigation],
             // allowTouchMove: false,
             // breakpoints: {
             //     1299: {
             //         slidesPerView: 3,
             //     }
             // },
+            // navigation: {
+            //     prevEl: '[data-slider-control="left"]',
+            //     nextEl: '[data-slider-control="right"]',
+            //     disabledClass: 'disabled-invert',
+            // },
+            // pagination: {
+            //     clickable: true,
+            //     el: '.slider-intro__pagination',
+            //     bulletClass: 'bullet-line',
+            //     bulletActiveClass: 'bullet-line--active'
+            //
+            // },
+            // on: {
+            //     breakpoint: (el: Swiper) => {
+            //         if (!el.params.enabled) {
+            //             removeInlineStyles(el);
+            //         }
+            //     }
+            // }
+        });
+    }
+
+    initIntroSlider = (el: HTMLElement) => {
+        const updatePassedSlides = (swiper: Swiper) => {
+            swiper.slides.forEach((slide: SwiperSlide, index: number) => {
+                slide.classList.toggle('prev', index < swiper.activeIndex);
+            });
+
+            // // Синхронизируем childInstance с текущим индексом
+            // if (this.childInstance && this.childInstance.activeIndex !== swiper.activeIndex) {
+            //     this.childInstance.slideTo(swiper.activeIndex);
+            // }
+        };
+
+        this.sliderInstance = new Swiper(el, {
+            spaceBetween: 24,
+            slidesPerView: 1,
+            modules: [Pagination, Navigation],
+            autoplay: true,
             navigation: {
                 prevEl: '[data-slider-control="left"]',
                 nextEl: '[data-slider-control="right"]',
@@ -88,16 +132,12 @@ class Slider {
                 clickable: true,
                 el: '.slider-intro__pagination',
                 bulletClass: 'bullet-line',
-                bulletActiveClass: 'bullet-line--active'
-
+                bulletActiveClass: 'bullet-line--active',
             },
-            // on: {
-            //     breakpoint: (el: Swiper) => {
-            //         if (!el.params.enabled) {
-            //             removeInlineStyles(el);
-            //         }
-            //     }
-            // }
+            on: {
+                init: updatePassedSlides,
+                slideChange: updatePassedSlides,
+            }
         });
     }
 

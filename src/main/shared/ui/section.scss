@@ -16,6 +16,10 @@
 		&.active {
 			background-color: var(--color-black);
 		}
+
+		&.menu {
+			background-color: var(--color-white);
+		}
 	}
 
 	&.bg-dark {
@@ -26,11 +30,5 @@
 			color: var(--color-black);
 			background-color: var(--color-white);;
 		}
-	}
-
-	&-intro {
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
 	}
 }

@@ -1,6 +1,7 @@
 .bullet-line {
 	height: 2px;
 	flex-grow: 1;
+	transition: 0.3s all;
 	background-color: #838383;
 
 	&--active {
