@@ -3,9 +3,50 @@
 	display: flex;
 	flex-direction: column;
 
+
+	@media (max-width: 1299px) {
+		gap: r(45);
+	}
+
 	&__head {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+	}
+
+	&__wrapper {
+		@media (max-width: 1299px) {
+			gap: r(24);
+			width: 100%;
+			display: grid;
+			grid-auto-flow: dense;
+			grid-template-rows: minmax(0, 1fr);
+			grid-template-columns: repeat(12, minmax(0, 1fr));
+		}
+	}
+
+	&__slide {
+		@media (max-width: 1299px) {
+			display: none;
+			visibility: hidden;
+			grid-column: span 12;
+
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3) {
+				display: block;
+				visibility: visible;
+			}
+		}
+	}
+
+	&__toolbar {
+		display: none;
+		visibility: hidden;
+
+		@media (max-width: 1299px) {
+			display: block;
+			visibility: visible;
+		}
 	}
 }

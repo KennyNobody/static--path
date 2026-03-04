@@ -1,0 +1,9 @@
+.bullet-line {
+	height: 2px;
+	flex-grow: 1;
+	background-color: #838383;
+
+	&--active {
+		background-color: var(--color-white);
+	}
+}

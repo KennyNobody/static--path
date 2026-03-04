@@ -1,0 +1,17 @@
+.intro {
+	height: 100vh;
+	display: flex;
+	padding-top: 25vh;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (max-width: 1299px) {
+	.intro {
+		height: auto;
+		min-height: 0;
+		display: block;
+		padding-top: r(90);
+		padding-bottom: r(45);
+	}
+}

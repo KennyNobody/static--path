@@ -9,10 +9,6 @@
 		position: fixed;
 	}
 
-	&.bg-dark {
-
-	}
-
 	&.section-header {
 		transition: 0.3s all;
 		color: var(--color-white);
@@ -30,5 +26,11 @@
 			color: var(--color-black);
 			background-color: var(--color-white);;
 		}
+	}
+
+	&-intro {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 }

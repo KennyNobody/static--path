@@ -21,7 +21,10 @@ class LeafletApp {
     }
 
     initMap = () => {
-        this.map = L.map(this.el as HTMLElement).setView([43.486414, 43.646551], 8);
+        this.map = L.map(this.el as HTMLElement, {
+            scrollWheelZoom: false,
+            touchZoom: true,
+        }).setView([43.486414, 43.646551], 8);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'

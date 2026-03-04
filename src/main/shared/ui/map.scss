@@ -3,6 +3,11 @@
 	overflow: hidden;
 	position: relative;
 
+
+	@media (max-width: 1299px) {
+		height: r(600);
+	}
+
 	//&__image {
 	//	width: 100%;
 	//	height: auto;

@@ -5,6 +5,18 @@
 	position: relative;
 	border-radius: r(8);
 
+	&--light {
+		.article-link__content {
+			background: linear-gradient(to top, #FFB300ff 0%, #FFB30000 100%);
+		}
+	}
+
+	&--dark {
+		.article-link__content {
+			background: linear-gradient(to top, #002D50ff 0%, #002D5000 100%);
+		}
+	}
+
 	&--small {
 		.article-link {
 			&__content {
@@ -73,8 +85,6 @@
 		flex-direction: column;
 		padding: r(16) r(16) r(24);
 		justify-content: space-between;
-		background: linear-gradient(to top, #002D50ff 0%, #002D5000 100%);
-
 	}
 
 	&__title {

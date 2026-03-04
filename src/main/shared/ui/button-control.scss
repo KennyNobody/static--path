@@ -16,4 +16,11 @@
 			}
 		}
 	}
+	&.disabled-invert{
+		.button-control {
+			&__icon {
+				fill: var(--color-white);
+			}
+		}
+	}
 }
