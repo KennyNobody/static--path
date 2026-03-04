@@ -1,0 +1,11 @@
+.title-page {
+	font-weight: 700;
+	font-size: r(68);
+	line-height: 1.15;
+	text-transform: uppercase;
+	color: var(--color-white);
+
+	@media (max-width: 1299px) {
+		font-size: r(24);
+	}
+}

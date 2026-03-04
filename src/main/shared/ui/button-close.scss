@@ -1,0 +1,15 @@
+.button-close {
+	cursor: pointer;
+
+	&__icon {
+		width: r(14);
+		height: r(14);
+		display: block;
+		fill: var(--color-accent-light);
+	}
+
+	&:hover {
+		opacity: 0.7;
+		transition: 0.3s all;
+	}
+}

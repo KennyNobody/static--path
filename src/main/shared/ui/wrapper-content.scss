@@ -1,0 +1,9 @@
+.wrapper-content {
+	padding: r(80);
+	border-radius: r(16);
+	background-color: var(--color-white);
+
+	@media (max-width: 1299px) {
+		padding: r(40) 0 r(80);
+	}
+}

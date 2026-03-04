@@ -10,6 +10,13 @@
 	&--regular {
 		font-size: r(20);
 
+		h2 {
+			font-size: r(40);
+			font-weight: 700;
+			line-height: 1.15;
+			color: var(--color-accent-dark);
+		}
+
 		strong {
 			font-weight: 700;
 		}
@@ -20,6 +27,10 @@
 	.editor {
 		&--regular {
 			font-size: r(15);
+
+			h2 {
+				font-size: r(26);
+			}
 		}
 	}
 }
