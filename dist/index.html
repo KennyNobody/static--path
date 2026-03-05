@@ -565,11 +565,7 @@
 				            </svg>
 			            </button>
 		            </div>
-		            <div class="diamond-slider__pagination">
-			            <div class="diamond-slider__dot bullet active"></div>
-			            <div class="diamond-slider__dot bullet"></div>
-			            <div class="diamond-slider__dot bullet"></div>
-		            </div>
+		            <div class="diamond-slider__pagination"></div>
 	            </div>
             </div>
 	            <div class="mob-visible grid__col-mob--4">
@@ -1278,7 +1274,7 @@
                 <section class="section">
     <div class="container">
         <!-- Из-за слишком больших отличий в дизайне, блок дублируется два раза - для десктопа и для мобилки -->
-        <div class="grid grid--end">
+        <div class="grid grid--end" data-diamond-slider-group>
             <div class="grid__col grid__col--5 grid__col-mob--4 relative z-index-2">
                 <div class="content-aside">
                     <div class="content-aside__title">
@@ -1287,10 +1283,36 @@
                         </h2>
                     </div>
                     <div class="content-aside__main mob-hidden">
-                        <div class="editor editor--regular">
-                            <p>
-                                Горный район Приэльбрусья в Кабардино-Балкарской Республике уже более полувека является популярным местом на туристической карте России, в которое стремятся приехать десятки тысяч спортсменов и любителей зимнего отдыха со всего мира. Смотровые площадки, горнолыжные трассы, сноупарк, пешие экомаршруты и возможность восхождения на Эльбрус
-                            </p>
+                        <div class="diamond-slider-content" data-diamond-slider-content>
+                            <div class="diamond-slider-content__item editor editor--regular" data-diamond-slider-content-item>
+                                <p>
+                                    Горный район Приэльбрусья в Кабардино-Балкарской Республике уже более полувека является популярным местом на туристической карте России, в которое стремятся приехать десятки тысяч спортсменов и любителей зимнего отдыха со всего мира. Смотровые площадки, горнолыжные трассы, сноупарк, пешие экомаршруты и возможность восхождения на Эльбрус.
+                                </p>
+                            </div>
+                            <div class="diamond-slider-content__item editor editor--regular" data-diamond-slider-content-item>
+                                <p>
+                                    <strong>Тропа к обсерватории Терскол</strong>
+                                </p>
+                                <p>
+                                    Маршрут начинается в сосновом лесу и выводит к высотной площадке с панорамой Главного Кавказского хребта. Тропа подходит для однодневного прогулочного треккинга.
+                                </p>
+                            </div>
+                            <div class="diamond-slider-content__item editor editor--regular" data-diamond-slider-content-item>
+                                <p>
+                                    <strong>Ущелье Ирик-Чат</strong>
+                                </p>
+                                <p>
+                                    Один из самых живописных путей в районе Эльбруса с ледниковыми ручьями, каменными грядами и широкими альпийскими лугами. Популярно у тех, кто любит длительные пешие выходы.
+                                </p>
+                            </div>
+                            <div class="diamond-slider-content__item editor editor--regular" data-diamond-slider-content-item>
+                                <p>
+                                    <strong>Поляна Азау</strong>
+                                </p>
+                                <p>
+                                    Главная стартовая точка для канатных дорог, радиальных маршрутов и активного отдыха в Приэльбрусье. Здесь удобно начинать прогулки и короткие горные восхождения.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div class="content-aside__control mob-hidden">
@@ -1302,66 +1324,105 @@
             </div>
             <div class="grid__col grid__col--1 mob-hidden"></div>
             <div class="grid__col grid__col--6 grid__col-mob--4 mbm-30">
-                <div class="swiper-container slider-locations" data-slider="locations">
-                    <div class="swiper-wrapper slider-locations__wrapper">
-                        <div class="swiper-slide slider-locations__slide">
-                            <div class="slide-info">
-                                <img class="slide-info__img" src="./assets/images/slide-ill.png" alt="">
-                                <p class="slide-info__title">
-                                    Эльбрус
-                                </p>
+                <div class="diamond-slider" data-diamond-slider="slider">
+                    <div class="diamond-slider__decorations">
+                        <svg class="diamond-slider__decoration" width="97" height="98" viewBox="0 0 97 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M87.6066 0.00154839H9.37341C4.23656 0.00154839 0.0643063 4.17502 0 9.34933V88.5897C0.0627752 96.9753 10.1175 101.155 16 95.2057L94.2332 16.1664C100.142 10.1986 95.9603 0 87.6066 0V0.00154839Z" fill="#002D50"/>
+                        </svg>
+
+                        <svg class="diamond-slider__decoration" width="156" height="156" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 10.5161V145.502C0 151.256 4.628 155.928 10.3578 156H145.574C154.862 155.93 159.496 144.673 152.905 138.082L17.9177 3.09634C11.3056 -3.51573 0 1.16254 0 10.5145L0 10.5161Z" fill="#002D50"/>
+                        </svg>
+                    </div>
+
+                    <div class="diamond-slider__slides">
+                        <div class="diamond-slider__slide">
+                            <div class="diamond-slider__img">
+                                <img src="./assets/images/slide-ill.png" alt="">
+                            </div>
+                            <div class="diamond-slider__title">
+                                <span>Эльбрус</span>
                             </div>
                         </div>
-                        <div class="swiper-slide slider-locations__slide">
-                            <div class="slide-info">
-                                <img class="slide-info__img" src="./assets/images/slide-ill.png" alt="">
-                                <p class="slide-info__title">
-                                    Ляжгинский водопад
-                                </p>
+
+                        <div class="diamond-slider__slide">
+                            <div class="diamond-slider__img">
+                                <img src="./assets/images/mock.svg" alt="">
+                            </div>
+                            <div class="diamond-slider__title">
+                                <span>Тропа Терскол</span>
                             </div>
                         </div>
-                        <div class="swiper-slide slider-locations__slide">
-                            <div class="slide-info">
-                                <img class="slide-info__img" src="./assets/images/slide-ill.png" alt="">
-                                <p class="slide-info__title">
-                                    Эльбрус
-                                </p>
+
+                        <div class="diamond-slider__slide">
+                            <div class="diamond-slider__img">
+                                <img src="./assets/images/mock-2.svg" alt="">
+                            </div>
+                            <div class="diamond-slider__title">
+                                <span>Ирик-Чат</span>
                             </div>
                         </div>
-                        <div class="swiper-slide slider-locations__slide">
-                            <div class="slide-info">
-                                <img class="slide-info__img" src="./assets/images/slide-ill.png" alt="">
-                                <p class="slide-info__title">
-                                    Ляжгинский водопад
-                                </p>
+
+                        <div class="diamond-slider__slide">
+                            <div class="diamond-slider__img">
+                                <img src="./assets/images/mock.svg" alt="">
+                            </div>
+                            <div class="diamond-slider__title">
+                                <span>Поляна Азау</span>
                             </div>
                         </div>
                     </div>
-                    <div class="slider-locations__controls">
-                        <button class="button-control" data-slider-control="left">
+
+                    <div class="diamond-slider__navigation">
+                        <button class="button-control disabled">
                             <svg class="button-control__icon">
                                 <use href="assets/sprite.svg#icon-arrow-left"></use>
                             </svg>
                         </button>
-                        <button class="button-control" data-slider-control="right">
+
+                        <button class="button-control">
                             <svg class="button-control__icon">
                                 <use href="assets/sprite.svg#icon-arrow-right"></use>
                             </svg>
                         </button>
                     </div>
-                    <div class="slider-locations__pagination"></div>
+
+                    <div class="diamond-slider__pagination"></div>
                 </div>
             </div>
             <div class="mob-visible grid__col-mob--4">
                 <div class="content-aside">
                     <div class="content-aside__main">
-                        <div class="editor editor--regular">
-                            <p>
-                                <strong>Ляжгинский водопад</strong>
-                            </p>
-                            <p>
-                                В рамках концепции ESG ООН разработала резолюцию «Повестка дня в области устойчивого развития на период до 2030 года», которой сформулировано 17 глобальных целей. Любой бизнес, не только крупный, может содействовать достижению этих целей на своём уровне. Чтобы оценить эффект, используют критерии ESG.
-                            </p>
+                        <div class="diamond-slider-content" data-diamond-slider-content>
+                            <div class="diamond-slider-content__item editor editor--regular" data-diamond-slider-content-item>
+                                <p>
+                                    Горный район Приэльбрусья в Кабардино-Балкарской Республике уже более полувека является популярным местом на туристической карте России, в которое стремятся приехать десятки тысяч спортсменов и любителей зимнего отдыха со всего мира. Смотровые площадки, горнолыжные трассы, сноупарк, пешие экомаршруты и возможность восхождения на Эльбрус
+                                </p>
+                            </div>
+                            <div class="diamond-slider-content__item editor editor--regular" data-diamond-slider-content-item>
+                                <p>
+                                    <strong>Тропа к обсерватории Терскол</strong>
+                                </p>
+                                <p>
+                                    Маршрут начинается в сосновом лесу и выводит к высотной площадке с панорамой Главного Кавказского хребта. Тропа подходит для однодневного прогулочного треккинга.
+                                </p>
+                            </div>
+                            <div class="diamond-slider-content__item editor editor--regular" data-diamond-slider-content-item>
+                                <p>
+                                    <strong>Ущелье Ирик-Чат</strong>
+                                </p>
+                                <p>
+                                    Один из самых живописных путей в районе Эльбруса с ледниковыми ручьями, каменными грядами и широкими альпийскими лугами. Популярно у тех, кто любит длительные пешие выходы.
+                                </p>
+                            </div>
+                            <div class="diamond-slider-content__item editor editor--regular" data-diamond-slider-content-item>
+                                <p>
+                                    <strong>Поляна Азау</strong>
+                                </p>
+                                <p>
+                                    Главная стартовая точка для канатных дорог, радиальных маршрутов и активного отдыха в Приэльбрусье. Здесь удобно начинать прогулки и короткие горные восхождения.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div class="content-aside__control">
