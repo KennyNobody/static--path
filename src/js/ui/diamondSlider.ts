@@ -27,6 +27,11 @@ interface DiamondSliderElements {
     decorations: HTMLElement | null;
 }
 
+interface ContentGroup {
+    root: HTMLElement;
+    contentItems: HTMLElement[];
+}
+
 const Z_INDEX_CONFIG = {
     base: 1,
     stackPastBand: 1,
@@ -47,6 +52,8 @@ class DiamondSlider {
     duration = 0.7;
     observer: Observer | null = null;
     paginationDots: HTMLElement[] = [];
+    contentGroups: ContentGroup[] = [];
+    contentFadeDuration = 0.4;
 
     baseSize = {
         width: 0,
@@ -99,11 +106,102 @@ class DiamondSlider {
         };
     }
 
+    collectContentGroups = () => {
+        const sliderGroupRoot = this.elements.root.closest<HTMLElement>('[data-diamond-slider-group]');
+        const assumedSliderRoot = sliderGroupRoot || this.elements.root.parentElement;
+
+        if (!assumedSliderRoot) {
+            return [];
+        }
+
+        const groups = Array.from(assumedSliderRoot.querySelectorAll<HTMLElement>('[data-diamond-slider-content]'));
+
+        return groups
+            .map((groupRoot) => {
+                const contentItems = Array.from(groupRoot.querySelectorAll<HTMLElement>('[data-diamond-slider-content-item]'));
+
+                return {
+                    root: groupRoot,
+                    contentItems,
+                };
+            })
+            .filter((group) => group.contentItems.length > 0);
+    }
+
+    initContentGroups = () => {
+        this.contentGroups = this.collectContentGroups();
+
+        if (!this.contentGroups.length) {
+            return;
+        }
+
+        this.updateContentItems(this.index, true);
+        this.syncContentHeights();
+    }
+
+    // Нормализуем высоту контента для плавности
+    syncContentHeights = () => {
+        if (!this.contentGroups.length) {
+            return;
+        }
+
+        this.contentGroups.forEach((group) => {
+            const maxHeight = group.contentItems.reduce((height, item) => {
+                return Math.max(height, item.offsetHeight);
+            }, 0);
+
+            if (maxHeight > 0) {
+                group.root.style.minHeight = `${maxHeight}px`;
+            }
+        });
+    }
+
+    updateContentItems = (nextIndex: number, immediate = false) => {
+        if (!this.contentGroups.length) {
+            return;
+        }
+
+        this.contentGroups.forEach((group) => {
+            group.contentItems.forEach((item, itemIndex) => {
+                const isActive = itemIndex === nextIndex;
+
+                item.style.zIndex = isActive ? '2' : '1';
+
+                if (immediate) {
+                    gsap.set(item, {
+                        autoAlpha: isActive ? 1 : 0,
+                    });
+
+                    item.style.pointerEvents = isActive ? 'auto' : 'none';
+
+                    return;
+                }
+
+                if (isActive) {
+                    item.style.pointerEvents = 'auto';
+                }
+
+                gsap.to(item, {
+                    autoAlpha: isActive ? 1 : 0,
+                    duration: this.contentFadeDuration,
+                    ease: 'power2.out',
+                    overwrite: true,
+                    onComplete: () => {
+                        if (!isActive) {
+                            item.style.pointerEvents = 'none';
+                        }
+                    },
+                });
+            });
+        });
+    }
+
     init = () => {
         this.updateResponsiveLayout();
         this.normalizeSlides();
         this.measureBaseSize();
         this.render(true);
+        this.initContentGroups();
         this.renderPagination();
         this.updateButtons();
         this.bindControls();
@@ -234,6 +332,8 @@ class DiamondSlider {
             this.normalizeSlides();
             this.measureBaseSize();
             this.render(true);
+            this.updateContentItems(this.index, true);
+            this.syncContentHeights();
         });
     }
 
@@ -550,6 +650,7 @@ class DiamondSlider {
 
         this.isAnimating = true;
         this.updateButtons();
+        this.updateContentItems(nextIndex);
 
         const direction = nextIndex > currentIndex ? 'forward' : 'backward';
 

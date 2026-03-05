@@ -1,3 +1,4 @@
+// Слайдер
 .diamond-slider {
 	--height: #{r(470)};
 	--slide-spacing: #{r(30)};
@@ -116,5 +117,23 @@
 				font-size: r(16);
 			}
 		}
+	}
+}
+
+// Группа переключаемого контента вне слайдера
+.diamond-slider-content {
+	position: relative;
+
+	&__item {
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&__item:first-child {
+		position: relative;
+		opacity: 1;
+		pointer-events: auto;
 	}
 }
