@@ -5,6 +5,7 @@ import {LeafletApp} from "../ui/leaflet";
 import {Header} from "../ui/header";
 import {Input} from "../ui/input";
 import {SliderSimilar} from "../ui/sliderSimilar";
+import {DiamondSlider} from "../ui/diamondSlider";
 
 class App {
     constructor() {
@@ -19,6 +20,7 @@ class App {
         this.initHeader();
         this.initInput();
         this.initSimilarSliders();
+        this.initDiamondSliders();
     }
 
     initSliders = () => {
@@ -31,6 +33,12 @@ class App {
         const els = document.querySelectorAll('[data-similar-slider="block"]');
 
         els.forEach((item: HTMLElement) => new SliderSimilar(item));
+    }
+
+    initDiamondSliders = () => {
+        const els = document.querySelectorAll('[data-diamond-slider]');
+
+        els.forEach((item: HTMLElement) => new DiamondSlider(item));
     }
 
     initFilters = () => {
@@ -65,4 +73,3 @@ class App {
 }
 
 export {App};
-

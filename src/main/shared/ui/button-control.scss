@@ -1,6 +1,7 @@
 .button-control {
 	padding: r(12);
 	cursor: pointer;
+	transition: 0.3s ease;
 
 	&__icon {
 		width: r(85);
@@ -16,7 +17,12 @@
 			}
 		}
 	}
-	&.disabled-invert{
+
+	&.loading {
+		opacity: 0.85;
+	}
+
+	&.disabled-invert {
 		.button-control {
 			&__icon {
 				fill: var(--color-white);
