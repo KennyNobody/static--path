@@ -1,54 +1,88 @@
 // Слайдер
-.diamond-slider {
-	--height: #{r(470)};
-	--slide-spacing: #{r(30)};
 
-	position: relative;
-	height: var(--height);
-	user-select: none;
+.diamond-slider {
+	// Конфигурация
+
+	--item-size: #{r(470)};
+	--item-gap: #{r(10)};
+	--decorations-spacing-top: #{r(72)};
+	--decorations-spacing-bottom: #{r(72)};
+	--decorations-scale: 1;
+
+	// Переопределение swiper
+
+	&.swiper {
+		overflow: visible;
+	}
+
+	.swiper-slide {
+		width: var(--item-size);
+
+		&:not(.swiper-slide-active):not(.swiper-slide-next):not(.swiper-slide-prev) {
+			.diamond-slider__title {
+				opacity: 0;
+			}
+		}
+	}
+
+	// Собственные стили
 
 	&__decorations {
 		position: absolute;
 		left: 0;
-		top: 0;
-		bottom: 0;
+		top: var(--decorations-spacing-top);
+		bottom: var(--decorations-spacing-bottom);
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		z-index: 1;
+	}
+
+	&__decoration {
+		transform: scale(var(--decorations-scale));
+
+		&:nth-of-type(1) {
+			transform-origin: top left;
+		}
+
+		&:nth-of-type(2) {
+			transform-origin: bottom left;
+		}
 	}
 
 	&__navigation {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		z-index: 999;
+		display: flex;
+		justify-content: flex-end;
 	}
 
 	&__pagination {
 		position: absolute;
-		right: var(--slide-spacing);
+		right: r(24);
 		bottom: 0;
 		display: flex;
+		justify-content: flex-end;
 		flex-wrap: wrap;
-		gap: r(8);
+		gap: r(6);
+		z-index: 1;
 	}
 
-	&__slide {
-		position: absolute;
-		bottom: var(--slide-spacing);
-		aspect-ratio: 1;
-		height: var(--height);
+	&__item {
+		transform: rotate(-45deg) scale(calc(1 / sqrt(2)));
+		width: var(--item-size);
+		user-select: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-end;
 	}
 
 	&__img {
-		width: 100%;
-		height: 100%;
-		transform: rotate(45deg) scale(calc(1 / sqrt(2)));
 		border-radius: r(32);
+		aspect-ratio: 1;
 		overflow: hidden;
 
 		img {
-			transform: rotate(-45deg) scale(sqrt(2));
+			transform: rotate(45deg) scale(sqrt(2));
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -57,26 +91,34 @@
 	}
 
 	&__title {
+		transform: translateY(calc(100% + var(--item-gap)));
 		position: absolute;
-		right: r(10);
-		top: calc(50% - #{r(14)});
-		width: 50%;
-		background-color: var(--color-black);
-		border-radius: r(8);
-		color: var(--color-white);
-		padding: r(12) r(18);
+		color: var(--color-accent-dark);
 		text-align: right;
+		font-size: r(48);
+		font-weight: 600;
+		white-space: pre-wrap;
+		transition: 0.3s ease opacity;
+	}
+}
 
-		span {
-			display: block;
-			font-size: 32px;
-			font-weight: 600;
-			height: 2lh;
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 2;
-			overflow: hidden;
-			word-break: break-all;
+@media (max-width: 1299px) {
+	.diamond-slider {
+		--item-size: #{r(270)};
+		--decorations-spacing-top: #{r(40)};
+		--decorations-spacing-bottom: 0;
+		--decorations-scale: 0.7;
+
+		&__navigation {
+			display: none;
+		}
+
+		&__img {
+			border-radius: r(24);
+		}
+
+		&__title {
+			font-size: r(24);
 		}
 	}
 }
@@ -89,57 +131,21 @@
 	}
 }
 
-@media (max-width: 1299px) {
-	.diamond-slider {
-		--height: #{r(240)};
-		--slide-spacing: #{r(18)};
-		touch-action: pan-y;
-		overscroll-behavior: contain;
-
-		&__navigation {
-			display: none;
-		}
-
-		&__decoration {
-			&:nth-of-type(1) {
-				transform: scale(0.5);
-				transform-origin: top left;
-			}
-
-			&:nth-of-type(2) {
-				transform: scale(0.5);
-				transform-origin: bottom left;
-			}
-		}
-
-		&__img {
-			border-radius: r(24);
-		}
-
-		&__title {
-			padding: r(6) r(10);
-
-			span {
-				font-size: r(16);
-			}
-		}
-	}
-}
-
 // Группа переключаемого контента вне слайдера
+
 .diamond-slider-content {
 	position: relative;
 
 	&__item {
 		position: absolute;
 		inset: 0;
-		opacity: 0;
-		pointer-events: none;
-	}
+		transition: 0.3s ease opacity, 0.5s ease transform;
+		transform-origin: top center;
 
-	&__item:first-child {
-		position: relative;
-		opacity: 1;
-		pointer-events: auto;
+		&:not(&--active) {
+			transform: translateY(r(12));
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 }

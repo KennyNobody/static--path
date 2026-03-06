@@ -5,7 +5,7 @@ import {LeafletApp} from "../ui/leaflet";
 import {Header} from "../ui/header";
 import {Input} from "../ui/input";
 import {SliderSimilar} from "../ui/sliderSimilar";
-import {DiamondSlider} from "../ui/diamondSlider";
+import {SliderDiamond} from "../ui/sliderDiamond";
 
 class App {
     constructor() {
@@ -38,7 +38,7 @@ class App {
     initDiamondSliders = () => {
         const els = document.querySelectorAll('[data-diamond-slider]');
 
-        els.forEach((item: HTMLElement) => new DiamondSlider(item));
+        els.forEach((item: HTMLElement) => new SliderDiamond(item));
     }
 
     initFilters = () => {
