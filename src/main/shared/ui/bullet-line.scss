@@ -2,7 +2,7 @@
 	height: 2px;
 	flex-grow: 1;
 	transition: 0.3s all;
-	background-color: #838383;
+	background-color: var(--color-neutral-400);
 
 	&--active {
 		background-color: var(--color-white);

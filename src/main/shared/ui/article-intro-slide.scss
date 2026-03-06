@@ -29,7 +29,7 @@
 		padding: r(34) r(24);
 		flex-direction: column;
 		justify-content: flex-end;
-		background-image: linear-gradient(180deg, rgba(0, 45, 80, 0) 0%, #002D50 100%);
+		background-image: linear-gradient(180deg, var(--color-brand-blue-alpha-0) 0%, var(--color-brand-blue) 100%);
 	}
 
 	&__title {
@@ -50,7 +50,7 @@
 		&__content {
 			padding: r(21) r(27);
 			justify-content: flex-start;
-			background-image: linear-gradient(0deg, rgba(0, 45, 80, 0) 0%, #002D50 100%);
+			background-image: linear-gradient(0deg, var(--color-brand-blue-alpha-0) 0%, var(--color-brand-blue) 100%);
 		}
 
 		&__title {

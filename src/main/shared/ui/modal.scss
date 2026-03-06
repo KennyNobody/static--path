@@ -1,7 +1,7 @@
 .modal {
 	border-radius: r(4);
 	padding: r(80) r(20) r(40);
-	border: 1px solid #D5ECFF80;
+	border: 1px solid var(--color-light-blue-alpha-50);
 	background-color: var(--color-white);
 
 	&__title {

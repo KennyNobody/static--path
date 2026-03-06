@@ -24,13 +24,13 @@
 		background-color: var(--color-accent-light);
 
 		&:hover {
-			background-color: #F89827;
+			background-color: var(--color-accent-light-hover);
 		}
 	}
 
 	&--dark {
 		color: var(--color-white);
-		background-color: #002D50;
+		background-color: var(--color-brand-blue);
 
 		&:hover {
 			opacity: 0.7;

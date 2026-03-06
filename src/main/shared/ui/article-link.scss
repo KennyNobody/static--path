@@ -7,13 +7,13 @@
 
 	&--light {
 		.article-link__content {
-			background: linear-gradient(to top, #FFB300ff 0%, #FFB30000 100%);
+			background: linear-gradient(to top, var(--color-accent-light) 0%, var(--color-accent-light-alpha-0) 100%);
 		}
 	}
 
 	&--dark {
 		.article-link__content {
-			background: linear-gradient(to top, #002D50ff 0%, #002D5000 100%);
+			background: linear-gradient(to top, var(--color-brand-blue) 0%, var(--color-brand-blue-alpha-0) 100%);
 		}
 	}
 

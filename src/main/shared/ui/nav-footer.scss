@@ -2,6 +2,7 @@
 	gap: r(20);
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 
 	&__link {
 		font-weight: 700;

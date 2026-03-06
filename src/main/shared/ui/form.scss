@@ -21,12 +21,12 @@
 	}
 
 	&__text {
-		color: #1E202080;
+		color: var(--color-black-alpha-50);
 		text-align: center;
 	}
 
 	&__error-text {
-		color: #FF6978;
+		color: var(--color-danger);
 		font-size: r(13);
 		text-align: center;
 	}
