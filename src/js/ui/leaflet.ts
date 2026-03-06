@@ -9,6 +9,25 @@ const MARKER = {
     link: '#',
 };
 
+const getElementCenter = (element: HTMLElement) => {
+    const rect = element.getBoundingClientRect();
+
+    return {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2,
+    };
+};
+
+const getPopupImageToMarkerOffset = (markerElement: HTMLElement, popupImageElement: HTMLElement) => {
+    const markerCenter = getElementCenter(markerElement);
+    const popupIconCenter = getElementCenter(popupImageElement);
+
+    return L.point(
+        markerCenter.x - popupIconCenter.x,
+        markerCenter.y - popupIconCenter.y,
+    );
+};
+
 class LeafletApp {
     el: Element;
     map: L.Map;
@@ -18,6 +37,28 @@ class LeafletApp {
         this.initMap();
         this.addTrack();
         this.addMarker();
+    }
+
+    private alignPopupImageToMarker = (marker: L.Marker, popup: L.Popup) => {
+        const markerElement = marker.getElement();
+        const popupElement = popup.getElement();
+
+        if (!markerElement || !popupElement) {
+            return;
+        }
+
+        const popupImageElement = popupElement.querySelector<HTMLElement>('.marker__image');
+
+        if (!popupImageElement) {
+            return;
+        }
+
+        const offset = getPopupImageToMarkerOffset(markerElement, popupImageElement);
+        const currentOffset = L.point(popup.options.offset ?? [0, 0]);
+        const nextOffset = currentOffset.add(offset);
+
+        popup.options.offset = [nextOffset.x, nextOffset.y];
+        popup.update();
     }
 
     initMap = () => {
@@ -42,22 +83,29 @@ class LeafletApp {
         });
 
         const popup = `
-        <div class="marker" data-map="item">
-            <div class="marker__preview" data-map="button">
-                <img class="marker__image" src="${MARKER.icon}" alt="">
-            </div>
-            <p class="marker__title">${MARKER.title}</p>
-            <a href="${MARKER.link}" class="marker__link">На карту</a>
-        </div>
-    `;
+            <div class="marker" data-map="item">
+                <div class="marker__preview" data-map="button">
+                    <img class="marker__image" src="${MARKER.icon}" alt="">
+                </div>
 
-        L.marker(MARKER.coords, { icon })
+                <p class="marker__title">${MARKER.title}</p>
+                <a href="${MARKER.link}" class="marker__link">На карту</a>
+            </div>
+        `;
+
+        const marker = L
+            .marker(MARKER.coords, { icon })
             .addTo(this.map)
             .bindPopup(popup, {
                 className: 'marker-popup',
                 closeButton: false,
                 offset: [0, -42], // [horizontal, vertical]
             });
+
+        marker.on('popupopen', ({ popup: openedPopup }: L.PopupEvent) => {
+            // Выравниваем попап относительно внутренней иконки по маркеру
+            this.alignPopupImageToMarker(marker, openedPopup);
+        });
     }
 }
 

@@ -89,7 +89,7 @@
 	}
 
 	&__preview {
-		width: r(50);
+		width: r(84);
 		grid-area: 1 / 1 / 3 / 2;
 
 		@media (max-width: 1299px) {
@@ -119,7 +119,7 @@
 		transition: 0.3s all;
 		justify-content: center;
 		grid-area: 2 / 2 / 3 / 3;
-		color: var(--color-white) !important;
+		color: var(--color-black) !important;
 		background-color: var(--color-accent-light);
 
 		@media (max-width: 1299px) {
@@ -155,5 +155,9 @@
 
 .leaflet-control-attribution {
 	opacity: 0;
+	display: none;
+}
+
+.leaflet-popup-tip-container {
 	display: none;
 }
