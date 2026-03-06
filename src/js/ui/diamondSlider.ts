@@ -136,11 +136,11 @@ class DiamondSlider {
         }
 
         this.updateContentItems(this.index, true);
-        this.syncContentHeights();
+        this.unifyContentHeights();
     }
 
-    // Нормализуем высоту контента для плавности
-    syncContentHeights = () => {
+    // Унифицируем высоту контента для плавности
+    unifyContentHeights = () => {
         if (!this.contentGroups.length) {
             return;
         }
@@ -333,7 +333,7 @@ class DiamondSlider {
             this.measureBaseSize();
             this.render(true);
             this.updateContentItems(this.index, true);
-            this.syncContentHeights();
+            this.unifyContentHeights();
         });
     }
 

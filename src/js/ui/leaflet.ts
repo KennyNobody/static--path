@@ -103,8 +103,10 @@ class LeafletApp {
             });
 
         marker.on('popupopen', ({ popup: openedPopup }: L.PopupEvent) => {
-            // Выравниваем попап относительно внутренней иконки по маркеру
-            this.alignPopupImageToMarker(marker, openedPopup);
+            requestAnimationFrame(() => {
+                // Выравниваем попап относительно внутренней иконки по маркеру
+                this.alignPopupImageToMarker(marker, openedPopup);
+            });
         });
     }
 }
