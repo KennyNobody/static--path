@@ -97,6 +97,12 @@
 		}
 	}
 
+	&__image {
+		width: r(84);
+		height: r(84);
+		display: block;
+	}
+
 	&__title {
 		//padding: r(12);
 		font-size: r(16);

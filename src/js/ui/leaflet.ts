@@ -1,7 +1,22 @@
 import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import {COORDINATES} from "./coords";
-import {waitForElement} from "../helpers/waitForElement";
+import {isMobile} from "../helpers/isMobile";
+
+const POPUP_BASE_OFFSET = L.point(0, -42);
+
+const POPUP_METRICS = {
+    desktop: {
+        iconSize: 84,
+        paddingX: 12,
+        paddingY: 12,
+    },
+    mobile: {
+        iconSize: 84,
+        paddingX: 8,
+        paddingY: 8,
+    },
+} as const;
 
 const MARKER = {
     coords: [42.68037, 45.90168] as [number, number],
@@ -19,9 +34,19 @@ const getElementCenter = (element: HTMLElement) => {
     };
 };
 
-const getPopupImageToMarkerOffset = (markerElement: HTMLElement, popupImageElement: HTMLElement) => {
+const getPopupMetrics = () => {
+    return isMobile() ? POPUP_METRICS.mobile : POPUP_METRICS.desktop;
+};
+
+const getPopupImageToMarkerOffset = (markerElement: HTMLElement, popupElement: HTMLElement) => {
     const markerCenter = getElementCenter(markerElement);
-    const popupIconCenter = getElementCenter(popupImageElement);
+    const popupRect = popupElement.getBoundingClientRect();
+    const popupMetrics = getPopupMetrics();
+
+    const popupIconCenter = {
+        x: popupRect.left + popupMetrics.paddingX + popupMetrics.iconSize / 2,
+        y: popupRect.top + popupMetrics.paddingY + popupMetrics.iconSize / 2,
+    };
 
     return L.point(
         markerCenter.x - popupIconCenter.x,
@@ -40,26 +65,19 @@ class LeafletApp {
         this.addMarker();
     }
 
-    private alignPopupImageToMarker = async (marker: L.Marker, popup: L.Popup) => {
-        const markerElement = marker.getElement();
-        const popupElement = popup.getElement();
+    private alignPopupImageToMarker = (marker: L.Marker, popup: L.Popup) => {
+        popup.options.offset = [POPUP_BASE_OFFSET.x, POPUP_BASE_OFFSET.y];
+        popup.update();
+
+        const markerElement = marker.getElement() as (HTMLElement | null);
+        const popupElement = popup.getElement() as (HTMLElement | null);
 
         if (!markerElement || !popupElement) {
             return;
         }
 
-        const popupImageElement = await waitForElement<HTMLElement>('.marker__image', {
-            root: popupElement,
-            timeout: 2000,
-        });
-
-        if (!popupImageElement) {
-            return;
-        }
-
-        const offset = getPopupImageToMarkerOffset(markerElement, popupImageElement);
-        const currentOffset = L.point(popup.options.offset ?? [0, 0]);
-        const nextOffset = currentOffset.add(offset);
+        const offset = getPopupImageToMarkerOffset(markerElement, popupElement);
+        const nextOffset = POPUP_BASE_OFFSET.add(offset);
 
         popup.options.offset = [nextOffset.x, nextOffset.y];
         popup.update();
@@ -89,7 +107,7 @@ class LeafletApp {
         const popup = `
             <div class="marker" data-map="item">
                 <div class="marker__preview" data-map="button">
-                    <img class="marker__image" src="${MARKER.icon}" alt="">
+                    <img class="marker__image" src="${MARKER.icon}" width="84" height="84" alt="">
                 </div>
 
                 <p class="marker__title">${MARKER.title}</p>
@@ -103,12 +121,12 @@ class LeafletApp {
             .bindPopup(popup, {
                 className: 'marker-popup',
                 closeButton: false,
-                offset: [0, -42], // [horizontal, vertical]
+                offset: [POPUP_BASE_OFFSET.x, POPUP_BASE_OFFSET.y], // [horizontal, vertical]
             });
 
         marker.on('popupopen', ({ popup: openedPopup }: L.PopupEvent) => {
+            // Выравниваем попап относительно внутренней иконки по маркеру
             requestAnimationFrame(() => {
-                // Выравниваем попап относительно внутренней иконки по маркеру
                 this.alignPopupImageToMarker(marker, openedPopup);
             });
         });
