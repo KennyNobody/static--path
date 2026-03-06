@@ -32,6 +32,15 @@ interface ContentGroup {
     contentItems: HTMLElement[];
 }
 
+interface SliderLayoutConfig {
+    mainLeftOffset: number;
+    mainBottomOffset: number;
+    stackTopOffset: number;
+    stackRightOffset: number;
+    stackOverflowRight: number;
+    stackScale: number;
+}
+
 const Z_INDEX_CONFIG = {
     base: 1,
     stackPastBand: 1,
@@ -40,9 +49,24 @@ const Z_INDEX_CONFIG = {
     transitionOverlayOffset: 1,
 } as const;
 
-const RESPONSIVE_CONFIG = {
-    stackScaleMobileBoost: 0.2,
-} as const;
+const LAYOUT_CONFIG: { desktop: SliderLayoutConfig; mobile: SliderLayoutConfig } = {
+    desktop: {
+        mainLeftOffset: 48,
+        mainBottomOffset: 24,
+        stackTopOffset: -24,
+        stackRightOffset: -24,
+        stackOverflowRight: 48,
+        stackScale: 0.4,
+    },
+    mobile: {
+        mainLeftOffset: 8,
+        mainBottomOffset: 24,
+        stackTopOffset: -24,
+        stackRightOffset: -24,
+        stackOverflowRight: 48,
+        stackScale: 0.5,
+    },
+};
 
 class DiamondSlider {
     elements: DiamondSliderElements | null = null;
@@ -67,14 +91,8 @@ class DiamondSlider {
         height: 0,
     };
 
-    layout = {
-        mainLeftOffset: 24,
-        mainBottomOffset: 24,
-        stackTopOffset: -24,
-        stackRightOffset: -24,
-        stackOverflowRight: 36,
-        stackScaleDesktop: 0.4,
-        stackScale: 0.4,
+    layout: SliderLayoutConfig = {
+        ...LAYOUT_CONFIG.desktop,
     };
 
     constructor(root: HTMLElement) {
@@ -197,7 +215,7 @@ class DiamondSlider {
     }
 
     init = () => {
-        this.updateResponsiveLayout();
+        this.applyResponsiveLayout();
         this.normalizeSlides();
         this.measureBaseSize();
         this.render(true);
@@ -210,9 +228,10 @@ class DiamondSlider {
         this.bindResize();
     }
 
-    updateResponsiveLayout = () => {
-        const mobileBoost = isMobile() ? RESPONSIVE_CONFIG.stackScaleMobileBoost : 0;
-        this.layout.stackScale = Math.min(1, this.layout.stackScaleDesktop + mobileBoost);
+    applyResponsiveLayout = () => {
+        const nextLayout = isMobile() ? LAYOUT_CONFIG.mobile : LAYOUT_CONFIG.desktop;
+
+        this.layout = { ...nextLayout };
     }
 
     normalizeSlides = () => {
@@ -310,6 +329,7 @@ class DiamondSlider {
             dragMinimum: 5,
             lockAxis: true,
             allowClicks: true,
+            preventDefault: true,
             ignore: '.button-control',
             onLeft: this.next,
             onRight: this.prev,
@@ -328,7 +348,7 @@ class DiamondSlider {
         this.resizeRaf = window.requestAnimationFrame(() => {
             this.resizeRaf = null;
 
-            this.updateResponsiveLayout();
+            this.applyResponsiveLayout();
             this.normalizeSlides();
             this.measureBaseSize();
             this.render(true);
@@ -377,7 +397,7 @@ class DiamondSlider {
         const rootRect = root.getBoundingClientRect();
         const width = this.baseMainRect.width || this.baseSize.width || rootRect.width;
         const height = this.baseMainRect.height || this.baseSize.height || rootRect.height;
-        const left = this.baseMainRect.left;
+        const left = this.baseMainRect.left + this.layout.mainLeftOffset;
         const top = this.baseMainRect.top;
 
         return {

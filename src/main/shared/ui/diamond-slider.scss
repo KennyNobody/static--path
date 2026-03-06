@@ -93,6 +93,12 @@
 	.diamond-slider {
 		--height: #{r(240)};
 		--slide-spacing: #{r(18)};
+		touch-action: pan-y;
+		overscroll-behavior: contain;
+
+		&__navigation {
+			display: none;
+		}
 
 		&__decoration {
 			&:nth-of-type(1) {
@@ -106,8 +112,8 @@
 			}
 		}
 
-		&__navigation {
-			display: none;
+		&__img {
+			border-radius: r(24);
 		}
 
 		&__title {

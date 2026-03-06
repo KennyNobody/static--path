@@ -50,7 +50,7 @@ class LeafletApp {
 
         const popupImageElement = await waitForElement<HTMLElement>('.marker__image', {
             root: popupElement,
-            timeout: 500,
+            timeout: 2000,
         });
 
         if (!popupImageElement) {
