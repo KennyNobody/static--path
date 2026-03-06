@@ -1,23 +1,28 @@
 class Header {
     private el: HTMLElement;
-    private button: HTMLElement;
+    private button: HTMLElement | null;
+    private isStaticHeader: boolean;
     private menuMode: boolean;
 
     constructor(el: HTMLElement) {
         this.el = el;
+        this.isStaticHeader = el.hasAttribute('data-header-static');
         this.menuMode = false;
         this.init();
     }
 
     init = () => {
         this.button = this.el.querySelector('[data-menu="button"]');
-        this.update();
-        window.addEventListener('scroll', this.update);
+
+        if (!this.isStaticHeader) {
+            this.update();
+            window.addEventListener('scroll', this.update);
+        }
 
         if (this.button) {
             this.button.addEventListener('click', () => {
                 this.toggleMenu();
-            })
+            });
         }
     }
 
@@ -26,6 +31,10 @@ class Header {
     }
 
     toggleMenu = () => {
+        if (!this.button) {
+            return;
+        }
+
         if (this.menuMode) {
             this.button.classList.remove('active');
             this.el.classList.remove('menu');
@@ -35,7 +44,6 @@ class Header {
             this.el.classList.add('menu');
             this.menuMode = true;
         }
-
     }
 }
 
