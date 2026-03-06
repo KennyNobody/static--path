@@ -1,6 +1,7 @@
 import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import {COORDINATES} from "./coords";
+import {waitForElement} from "../helpers/waitForElement";
 
 const MARKER = {
     coords: [42.68037, 45.90168] as [number, number],
@@ -39,7 +40,7 @@ class LeafletApp {
         this.addMarker();
     }
 
-    private alignPopupImageToMarker = (marker: L.Marker, popup: L.Popup) => {
+    private alignPopupImageToMarker = async (marker: L.Marker, popup: L.Popup) => {
         const markerElement = marker.getElement();
         const popupElement = popup.getElement();
 
@@ -47,7 +48,10 @@ class LeafletApp {
             return;
         }
 
-        const popupImageElement = popupElement.querySelector<HTMLElement>('.marker__image');
+        const popupImageElement = await waitForElement<HTMLElement>('.marker__image', {
+            root: popupElement,
+            timeout: 500,
+        });
 
         if (!popupImageElement) {
             return;
