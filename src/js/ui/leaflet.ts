@@ -110,8 +110,8 @@ class LeafletApp {
                     <img class="marker__image" src="${MARKER.icon}" width="84" height="84" alt="">
                 </div>
 
-                <p class="marker__title">${MARKER.title}</p>
-                <a href="${MARKER.link}" class="marker__link">На карту</a>
+                <p class="marker__title title-marker">${MARKER.title}</p>
+                <a href="${MARKER.link}" class="marker__link body-marker-link">На карту</a>
             </div>
         `;
 

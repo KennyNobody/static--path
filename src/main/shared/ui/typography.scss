@@ -1,0 +1,166 @@
+.title-xl {
+	font-size: r(78);
+	font-weight: 700;
+	line-height: 1.15;
+}
+
+.title-hero-xl {
+	font-size: r(128);
+	font-weight: 700;
+	line-height: 1.15;
+	text-transform: uppercase;
+}
+
+.title-hero-lg {
+	font-size: r(80);
+	font-weight: 700;
+	line-height: 1.15;
+	text-transform: uppercase;
+}
+
+.title-md {
+	font-size: r(24);
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.title-banner {
+	font-size: r(28);
+	font-weight: 700;
+	line-height: 1.25;
+	text-transform: uppercase;
+}
+
+.title-page-lg {
+	font-size: r(68);
+	font-weight: 700;
+	line-height: 1.15;
+	text-transform: uppercase;
+}
+
+.title-display {
+	font-size: r(48);
+	font-weight: 600;
+}
+
+.title-overlay {
+	font-size: r(32);
+	font-weight: 700;
+	line-height: 1.15;
+}
+
+.title-sm {
+	font-size: r(20);
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.title-editor {
+	font-size: r(40);
+	font-weight: 700;
+	line-height: 1.15;
+}
+
+.title-marker {
+	font-size: r(16);
+	font-weight: 700;
+	line-height: 1.35;
+}
+
+.body-xl {
+	font-size: r(24);
+	line-height: 1.3;
+}
+
+.body-m {
+	font-size: r(18);
+	line-height: 1.25;
+}
+
+.body-editor {
+	font-size: r(20);
+}
+
+.body-s {
+	font-size: r(16);
+	line-height: 1.25;
+}
+
+.body-breadcrumb {
+	font-size: r(20);
+	line-height: 1.3;
+}
+
+.body-xs-plus {
+	font-size: r(14);
+	line-height: 1.25;
+}
+
+.body-xs {
+	font-size: r(13);
+}
+
+.body-xxs {
+	font-size: r(12);
+	line-height: 1.25;
+}
+
+.body-xxxs {
+	font-size: r(11);
+	font-weight: 500;
+	line-height: 1.25;
+}
+
+.body-marker-link {
+	font-size: r(18);
+}
+
+@media (max-width: 1299px) {
+	.title-xl {
+		font-size: r(40);
+		line-height: 1.15;
+	}
+
+	.title-hero-xl {
+		font-size: r(48);
+		line-height: 1.3;
+	}
+
+	.title-hero-lg {
+		font-size: r(48);
+		line-height: 1.3;
+	}
+
+	.title-banner {
+		font-size: r(18);
+		line-height: 1.25;
+	}
+
+	.title-page-lg {
+		font-size: r(24);
+	}
+
+	.title-display {
+		font-size: r(24);
+	}
+
+	.title-editor {
+		font-size: r(26);
+	}
+
+	.body-xl {
+		font-size: r(16);
+	}
+
+	.body-editor {
+		font-size: r(15);
+	}
+
+	.body-breadcrumb {
+		font-size: r(16);
+	}
+
+	.body-marker-link {
+		font-size: r(12);
+	}
+}

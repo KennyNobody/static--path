@@ -1,8 +1,5 @@
 .title {
 	&--regular {
-		font-size: r(78);
-		font-weight: 700;
-		line-height: 1.15;
 		color: var(--color-brand-blue);
 	}
 
@@ -12,14 +9,5 @@
 
 	&.uppercase {
 		text-transform: uppercase;
-	}
-}
-
-@media (max-width: 1299px) {
-	.title {
-		&--regular {
-			font-size: r(40);
-			line-height: 1.15;
-		}
 	}
 }

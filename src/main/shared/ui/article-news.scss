@@ -40,22 +40,10 @@
 		flex-direction: column;
 	}
 
-	&__title {
-		font-weight: 700;
-		font-size: r(24);
-		line-height: 1.25;
-	}
-
-	&__content {
-		font-size: r(16);
-		line-height: 1.25;
-	}
-
 	&__time {
 		top: r(10);
 		z-index: 1;
 		left: r(10);
-		font-size: r(12);
 		font-weight: 500;
 		line-height: 1.25;
 		padding: r(4) r(8);
