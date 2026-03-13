@@ -7,6 +7,14 @@
 	border-bottom-left-radius: r(16);
 	border-bottom-right-radius: r(16);
 
+	&:not(&--no-bg) {
+		.breadcrumbs {
+			a {
+				color: var(--color-white);
+			}
+		}
+	}
+
 	@media (max-width: 1299px) {
 		margin-bottom: 0;
 		padding: r(105) 0 r(40);

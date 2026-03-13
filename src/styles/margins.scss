@@ -28,6 +28,10 @@
 
 @media (max-width: 1299px) {
 	.mbm {
+		&-0 {
+			margin-bottom: 0;
+		}
+
 		&-30 {
 			margin-bottom: r(30);
 		}

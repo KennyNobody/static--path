@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ошибка 502</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+</head>
+<body class="body">
+    <%= htmlWebpackPlugin.options.widgets.headerStatic %>
+    <div class="main">
+        <div class="main__section">
+            <section class="section">
+                <div class="page-head page-head--no-bg">
+                    <div class="container">
+                        <div class="breadcrumbs body-breadcrumb mb-40 mbm-0">
+                            <a href="">Главная -</a> 502
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="main__section">
+            <section class="section">
+                <div class="container">
+	                <div class="error-block error-block--align--center mb-180 mbm-50">
+		                <div class="error-block__content">
+			                <h1 class="error-block__title title-page-lg">Ошибка 502.<br> Bad Gateway.</h1>
+			                <img class="error-block__img error-block__img--mobile" src="./assets/images/502.png" alt="">
+			                <a href="" class="error-block__button button body-m button--accent button--fill">На главную</a>
+		                </div>
+
+		                <img class="error-block__img error-block__img--desktop" src="./assets/images/502.png" alt="">
+	                </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <%= htmlWebpackPlugin.options.widgets.footer %>
+</body>
+</html>
