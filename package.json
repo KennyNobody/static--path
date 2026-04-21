@@ -63,6 +63,7 @@
     "last 3 versions"
   ],
   "dependencies": {
+    "@fancyapps/ui": "^6.1.13",
     "@panzoom/panzoom": "^4.6.1",
     "leaflet": "^1.9.4",
     "leaflet.tilelayer.colorfilter": "^2.0.0",

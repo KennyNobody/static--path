@@ -1,0 +1,40 @@
+.article-detail {
+	display: flex;
+	flex-direction: column;
+	gap: r(80);
+
+	@media (max-width: 1299px) {
+		gap: r(40);
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: r(40);
+
+		@media (max-width: 1299px) {
+			gap: r(20);
+		}
+	}
+
+	&__title {
+		color: var(--color-accent-dark);
+	}
+
+	&__gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(r(300), 1fr));
+		gap: r(25);
+
+		@media (max-width: 1299px) {
+			gap: r(15);
+		}
+	}
+
+	&__img {
+		border-radius: r(16);
+		aspect-ratio: 3 / 2;
+		object-fit: cover;
+		cursor: zoom-in;
+	}
+}

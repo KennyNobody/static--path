@@ -7,6 +7,9 @@ import {Input} from "../ui/input";
 import {SliderSimilar} from "../ui/sliderSimilar";
 import {SliderDiamond} from "../ui/sliderDiamond";
 
+import { Fancybox } from '@fancyapps/ui/dist/fancybox/';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+
 class App {
     constructor() {
         this.init();
@@ -21,6 +24,7 @@ class App {
         this.initInput();
         this.initSimilarSliders();
         this.initDiamondSliders();
+        this.initFancybox();
     }
 
     initSliders = () => {
@@ -69,6 +73,10 @@ class App {
         const els: NodeListOf<Element> = document.querySelectorAll('[data-input="password"]');
 
         els.forEach((item) => new Input(item));
+    }
+
+    initFancybox = () => {
+        Fancybox.bind()
     }
 }
 
