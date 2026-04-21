@@ -1,0 +1,72 @@
+.alphabet-list {
+	display: flex;
+	flex-direction: column;
+	gap: r(80);
+	max-width: r(1190);
+	line-height: 1;
+
+	@media (max-width: 1299px) {
+		gap: r(60);
+	}
+
+	&__letter {
+		color: var(--color-neutral-400);
+	}
+
+	&__title {
+		margin-top: r(48);
+
+		@media (max-width: 1299px) {
+			margin-top: r(24);
+		}
+	}
+
+	&__attachment {
+		margin-top: r(24);
+		display: flex;
+		align-items: center;
+		gap: r(42);
+
+		@media (max-width: 1299px) {
+			margin-top: r(16);
+			gap: r(24);
+		}
+	}
+
+	&__file {
+		color: var(--color-neutral-400);
+		transition: opacity 0.3s ease;
+		text-decoration: underline 1.5px;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	&__download {
+		display: flex;
+		align-items: center;
+		gap: r(12);
+		color: var(--color-accent-light);
+		text-decoration: underline 1.5px;
+		transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.6;
+		}
+
+		span {
+			height: 1.2lh;
+		}
+	}
+
+	&__icon {
+		width: r(20);
+		height: r(20);
+	}
+}

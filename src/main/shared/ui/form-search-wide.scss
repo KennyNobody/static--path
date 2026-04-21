@@ -1,0 +1,29 @@
+.form-search-wide {
+	padding: r(12);
+	display: flex;
+	gap: r(12);
+
+	@media (max-width: 1299px) {
+		padding: r(0);
+	}
+
+	&__input {
+		flex-grow: 1;
+		min-width: 0;
+		padding: r(14) r(20);
+		border-radius: r(16);
+		background-color: var(--color-neutral-150);
+
+		&::placeholder {
+			color: var(--color-neutral-400);
+		}
+	}
+
+	&__button {
+		flex-shrink: 0;
+
+		@media (max-width: 1299px) {
+			padding: r(13) r(26);
+		}
+	}
+}

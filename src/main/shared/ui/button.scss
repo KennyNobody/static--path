@@ -1,13 +1,16 @@
 .button {
 	height: r(48);
 	display: flex;
+	gap: r(20);
 	font-weight: 500;
+	justify-content: center;
 	align-items: center;
 	padding: r(13) r(50);
 	border-radius: r(16);
 	transition: 0.3s all;
-	justify-content: center;
-	//color: var(--color-white);
+	background-color: var(--bg);
+	color: var(--color);
+	cursor: pointer;
 
 	&--fill {
 		min-width: r(196);
@@ -20,16 +23,25 @@
 	}
 
 	&--accent {
-		background-color: var(--color-accent-light);
+		--bg: var(--color-accent-light);
 
 		&:hover {
-			background-color: var(--color-accent-light-hover);
+			--bg: var(--color-accent-light-hover);
 		}
 	}
 
 	&--dark {
-		color: var(--color-white);
-		background-color: var(--color-brand-blue);
+		--color: var(--color-white);
+		--bg: var(--color-brand-blue);
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&--black {
+		--color: var(--color-white);
+		--bg: var(--color-black);
 
 		&:hover {
 			opacity: 0.7;
@@ -38,6 +50,12 @@
 
 	&--ungle {
 		border-radius: r(8);
+	}
+
+	&__icon {
+		fill: var(--color);
+		width: r(20);
+		height: r(20);
 	}
 }
 
